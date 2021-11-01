@@ -1,2 +1,2 @@
-print(1 + 4)
+print(1 + 3)
 print('hej sexy')
