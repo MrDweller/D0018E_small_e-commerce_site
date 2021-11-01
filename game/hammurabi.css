@@ -1,0 +1,67 @@
+body {
+ 	background-color: mediumseagreen;
+}
+
+h1 {
+	background-color:yellow;
+	padding:20px;
+	border: black 5px solid;
+	text-align: center;
+}
+
+#people li {
+	background-color: yellow;
+	display: inline;
+	border: black 1px solid;
+	padding: 5px;
+	margin-right: 30px;
+}
+
+#economy {
+	background-color: yellow;
+	display: block;
+	padding-left: 1px;
+	border: black 3px solid;
+	list-style: none;
+}
+
+#economy li {
+	margin-bottom: 2px;
+}
+
+rules {
+	float: left;
+	font-size: 20px;
+	padding-left: 60px;
+	list-style: circle;
+}
+
+form {
+	font-size: 20px;
+	float: left;
+}
+
+.fieldset {
+	border-style: none;
+}
+
+button {
+	margin: 30px 25px 0 0;
+	padding: 10px 15px;
+}
+
+footer {
+	background-color: grey;
+	display: block;
+	margin-top: 50px;
+	padding-left: 100px;
+	border: black 1px solid;
+}
+
+k {	
+	font-size: 13px;
+	text-align: left;
+}
+a {
+	float: left;
+}
