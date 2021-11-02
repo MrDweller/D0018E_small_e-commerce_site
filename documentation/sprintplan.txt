@@ -1,1 +1,13 @@
-test
+Big picture:
+Simpel front end
+Login
+Kundvagn
+Databas för sortiment
+Recensionssytem
+Rekommenderade varor för varje kund
+Filtrering (pris, betyg, kategori) 	
+
+Backlog:
+1. Skelett hemsida
+2. Sätta upp databas och websidan på en server
+3. Interaktion mellan databas och hemsida
