@@ -1,3 +1,10 @@
+Arian, Frank och Jesper
+
+User roles:
+Customer/Employee(admin)
+The employee role could be expanded into manager or site admin with different priveleges etc.
+
+
 Big picture:
 Simpel front end
 Login
