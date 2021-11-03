@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <title>AliRoad | e-commerce</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 
@@ -17,8 +18,8 @@
                 </div>
                 <nav>
                     <ul>
-                        <li> <a href="" class="btnUser"> Login </a></li>
-                        <li> <a href="" class="btnUser"> Signup </a></li>
+                        <li> <a href="" class="btn"> Login </a></li>
+                        <li> <a href="" class="btn"> Signup </a></li>
                         <li><a href=""> Home </a></li>
                         <li><a href=""> Account </a></li>
                         <img src="media/cart.png" width="50px" heigth="50px">
@@ -30,7 +31,7 @@
                 
             </div>
 
-            <!---- welcome section ---->
+            <!-- welcome section -->
             <div class="row">
                 <div class="col-2">
                     <h1>Buy some shiet to succeed</h1>
@@ -44,10 +45,12 @@
         </div>
     </div>
 
-    <!---- features section ---->
+    <!-- features section. this section could be expanded widely depending on how we want to 
+        present the products and the site. Right now we have categories(top products of each) and the most
+        popular item on the site. As mentioned, we can expand it to a special offer, testimonials and logos of brands -->
     <div class="categories">
         <div class="small-container">
-            <h2>Top Products </h2>
+            <h2 id="title">Top Products </h2>
             <div class="row">
                 <div class="col-3">
                     <img src="media/feature1.jpg">
@@ -63,19 +66,68 @@
     </div>
 
 
-    <!---- features products ---->
+    <!-- features products -->
     <div class="small-container">
-        <h2>Featured products</h2>
+        <h2 id="title">Featured products</h2>
         <div class="row">
-            <div class="col-4">
+            <!-- Dynamic, but needs interaction w. db wtho JS? --->
+            <div class="col-1">
                 <img src="media/top.png">
-                <h3>Best electricity</h3>
-                <p>666:-</p>
+                <h3>Best electricity i have bought, this changed my life</h3>
+                <!-- Maybe change the rating system somehow, not it is dynamic. check style.css -->
+                <div class="rating">
+                    <i class="fa fa-frown-o"></i>
+                    <i class="fa fa-frown-o"></i>
+                    <i class="fa fa-meh-o"></i>
+                    <i class="fa fa-smile-o"></i>
+                    <i class="fa fa-smile-o"></i>
+                </div>
+                <p>666 SEK</p>
         </div>
     </div>
 
+    <!-- footer -->
 
-    </div>
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col-1">
+                    <h3>Download our application</h3>
+                    <p>IOS and Android mobile</p>
+                </div>
+                <div class="footer-col-2">
+                    <img src="media/logo.png">
+                    <p>Our purpose is to sell cheap shit cheap</p>
+                </div>
+
+                <div class="footer-col-3">
+                    <h3>This shit is useful</h3>
+                    <ul>
+                        <li>Read more</li>>
+                        <li>Coupons</li>>
+                        <li>Return shit</li>>
+                        <li>Work for us</li>>
+                    </ul>
+                </div>
+
+                <div class="footer-col-4">
+                    <h3>Follow us</h3>
+                    <ul>
+                        <!-- add anchor tags to the social media links-->>
+                        <li>Discord</li>>
+                        <li>Twitter</li>>
+                        <li>Youtube</li>>
+                        <li>Youtube</li>>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>>
+
+
+
+
 
 </body>
 </html>
