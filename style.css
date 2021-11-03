@@ -25,22 +25,27 @@ nav{
     text-align: right;
 }
 
+/* This is for the unordered list*/
 nav ul{
     display: inline-block;
+    /* No more bullet points*/
     list-style-type: none;
 }
 
 nav ul li {
     display: inline-block;
+     /* Horizontal blocks with spaces between links in menu*/
     margin: right;
     padding: 20px;
 }
 
 a{
+    /* Removes the underscores/lines and menu text have the same color */
     text-decoration: none;
     color: #000;
 }
 
+/* Paragraphs have the same color*/
 p{
     color: #666
 }
@@ -48,8 +53,8 @@ p{
 .container{
     max-width: 1500px;
     margin: auto;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 25px;
+    padding-right: 25px;
 }
 
 .row{
@@ -64,17 +69,21 @@ p{
     min-width: 300px;
 }
 
+/* Two columns */
 .col-2 img{
     max-width: 100%;
     padding: 50px 0;
 }
 
+/* Welcome text */
 .col-2 h1{
     font-size: 50px;
     line-height: 60px;
+    /*space from top to bottom*/
     margin: 25px 0;
 }
 
+/* Start button */
 .btn{
     display: inline-block;
     background: #C49BBB;
@@ -84,7 +93,6 @@ p{
     border-radius: 20px;
     transition: background 0.5s;
 }
-
 .btn:hover{
     background: #666;
 }
@@ -97,7 +105,6 @@ p{
     border-radius: 20px;
     transition: background 0.5s;
 }
-
 .btnUser:hover{
     background: #666;
 }
@@ -122,7 +129,7 @@ p{
 
 .col-3 img{
     /* should be 100%, pictures are different size*/
-    width: 50%;
+    width: 100%;
 }
 
 .small-container{
