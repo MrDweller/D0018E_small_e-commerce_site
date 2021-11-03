@@ -39,7 +39,7 @@ nav ul li {
     display: inline-block;
      /* Horizontal blocks with spaces between links in menu*/
     margin: right;
-    padding: 20px;
+    padding: 10px;
 }
 
 a{
@@ -93,7 +93,7 @@ p{
     display: inline-block;
     background: #C49BBB;
     color: #fff;
-    padding: 10px 30px;
+    padding: 10px 20px;
     margin: 30px 0;
     border-radius: 20px;
     transition: background 0.5s;
@@ -107,7 +107,7 @@ p{
     display: inline-block;
     background: #C49BBB;
     color: #fff;
-    padding: 10px 30px;
+    padding: 10px 20px;
     border-radius: 20px;
     transition: background 0.5s;
 }
@@ -240,3 +240,19 @@ ul{
     list-style-type: none;
 }
 
+.app-logo{
+    margin-top: 20px;
+}
+
+.app-logo img{
+    width: 150px;
+}
+
+.footer hr{
+    border: none;
+    margin: 20px 0;
+}
+
+.copyright{
+    text-align: center;
+}
