@@ -1,3 +1,7 @@
+<?php 
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,10 +23,23 @@
                 </div>
                 <nav>
                     <ul>
-                        <li> <a href="login.php" class="btn"> Login </a></li>
-                        <li> <a href="" class="btn"> Signup </a></li>
+                        <?php
+                            if(isset($_SESSION["useruid"]))
+                            {
+                                $uid = $_SESSION["useruid"];
+                                echo '<li> <a href="include/logout.inc.php" class="btn"> Log out </a></li>';
+                                echo '<li> <a href="account.php" class="btn">';
+                                echo $uid;
+                                echo '</a></li>';
+                            }
+                            else 
+                            {
+                                echo '<li> <a href="login.php" class="btn"> Login </a></li>';
+                                echo '<li> <a href="signup.php" class="btn"> Sign up </a></li>';
+                            }
+                        ?>
+                        
                         <img src="media/cart.png" width="35px" heigth="25px">
-                        <li><a href=""> Account </a></li>
                         <li><a href="index.php"> Home </a></li>
                         <li><a href=""> Products </a></li>
                         <li><a href="about.php"> About </a></li>
