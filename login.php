@@ -54,8 +54,6 @@
 	</section>
 
 	<script src="js/login.js"></script>
-</body>
-</html>
 
 <?php
     include_once 'footer.php';
