@@ -2,19 +2,14 @@ Arian, Frank och Jesper
 
 User roles:
 Customer/Employee(admin)
-The employee role could be expanded into manager or site admin with different priveleges etc.
-
 
 Big picture:
-Simpel front end
-Login
-Kundvagn
-Databas för sortiment
-Recensionssytem
-Rekommenderade varor för varje kund
-Filtrering (pris, betyg, kategori) 	
+Simple front end (index.html)
+Login & Register
+Shopping cart
+Database for the items
+Reviews
+Personalised recommendations (based on for example previous shopping history)
+Filtering (price, review, category, etc) 	
 
-Backlog:
-1. Skelett hemsida
-2. Sätta upp databas och websidan på en server
-3. Interaktion mellan databas och hemsida
+
