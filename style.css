@@ -89,7 +89,7 @@ p{
 }
 
 /* Start button and hover effect */
-.button{
+.btn{
     display: inline-block;
     background: #C49BBB;
     color: #fff;
@@ -98,7 +98,7 @@ p{
     border-radius: 20px;
     transition: background 0.5s;
 }
-.button:hover{
+.btn:hover{
     background: #666;
 }
 
