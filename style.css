@@ -39,7 +39,7 @@ nav ul li {
     display: inline-block;
      /* Horizontal blocks with spaces between links in menu*/
     margin: right;
-    padding: 20px;
+    padding: 10px;
 }
 
 a{
@@ -54,7 +54,7 @@ p{
 }
 
 .container{
-    max-width: 1500px;
+    max-width: 100%;
     margin: auto;
     padding-left: 25px;
     padding-right: 25px;
@@ -70,14 +70,14 @@ p{
 
 /* Two columns, welcome text and pic */
 .col-2{
-    flex-basis: 50%;
+    flex-basis: 30%;
     min-width: 300px;
 }
 
 /* For the welcome pic */
 .col-2 img{
     max-width: 100%;
-    padding: 50px 0;
+    padding: 25px 0;
 }
 
 /* Welcome text */
@@ -93,7 +93,7 @@ p{
     display: inline-block;
     background: #C49BBB;
     color: #fff;
-    padding: 10px 30px;
+    padding: 10px 20px;
     margin: 30px 0;
     border-radius: 20px;
     transition: background 0.5s;
@@ -107,7 +107,7 @@ p{
     display: inline-block;
     background: #C49BBB;
     color: #fff;
-    padding: 10px 30px;
+    padding: 10px 20px;
     border-radius: 20px;
     transition: background 0.5s;
 }
@@ -171,7 +171,7 @@ p{
 }
 
 .col-1{
-    flex-basis: 25%;
+    flex-basis: 20%;
     padding: 10px;
     min-width: 200px;
     margin-bottom: 50px;
@@ -196,6 +196,63 @@ p{
 }
 
 /* footer */
+.footer{
+    background:#000;
+    color:#666;
+    font-size: 14px;
+    padding: 60px 0 20px;
+}
 
+.footer p{
+    color:#666;
+}
 
+.footer h3{
+    color:#fff;
+    margin-bottom: 20px;
+}
 
+.footer-col-1, .footer-col-2, .footer-col-3, .footer-col-4{
+    min-width: 250px;
+    margin-bottom: 20px;
+}
+
+.footer-col-1{
+    flex-basis: 10%;
+}
+
+.footer-col-2{
+    flex: 1;
+    text-align: center;
+}
+
+.footer-col-2 img{
+    width: 50%;
+    margin-bottom: 20px;
+}
+
+.footer-col-3, .footer-col-4{
+    flex-basis: 10%;
+    text-align: center;
+}
+
+ul{
+    list-style-type: none;
+}
+
+.app-logo{
+    margin-top: 20px;
+}
+
+.app-logo img{
+    width: 150px;
+}
+
+.footer hr{
+    border: none;
+    margin: 20px 0;
+}
+
+.copyright{
+    text-align: center;
+}
