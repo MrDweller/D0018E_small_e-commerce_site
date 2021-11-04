@@ -159,7 +159,6 @@ p{
 }
 
 .col-3 img{
-    /* should be 100%, pictures are different size*/
     width: 100%;
 }
 
@@ -255,4 +254,13 @@ ul{
 
 .copyright{
     text-align: center;
+}
+
+.signup-form-form{
+    display: block;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 10%;
 }
