@@ -1,9 +1,9 @@
 <?php
 
 // db variables
-$serverName = "localhost";
-$dBUsername = "root";
-$dBPassword = "";
+$serverName = "aliroad.se";
+$dBUsername = "aliadmin";
+$dBPassword = "deesnuts";
 $dBName = "alibase";
 
 
