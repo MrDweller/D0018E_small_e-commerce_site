@@ -4,12 +4,11 @@
     box-sizing: border-box;
 }
 
-/* Font for whole site */
 body{
     font-family: 'Poppins', sans-serif;
 }
 
-/* Effect on the logo*/
+/* Effect on the logo */
 #Aliroad{
     transition: 0.5s;
 }
@@ -17,7 +16,6 @@ body{
     transform: rotateY(360deg);
 }
 
-/* Navigation bar */
 .navbar{
     display: flex;
     align-items: center;
@@ -28,27 +26,27 @@ nav{
     text-align: right;
 }
 
-/* This is for the unordered list in the navbar*/
-nav ul{
-    display: inline-block;
-    /* No more bullet points*/
+ul{
     list-style-type: none;
 }
 
-nav ul li {
+
+nav ul{
     display: inline-block;
-     /* Horizontal blocks with spaces between links in menu*/
+    list-style-type: none;
+}
+
+nav ul li{
+    display: inline-block;
     margin: right;
     padding: 10px;
 }
 
 a{
-    /* Removes the underscores/lines and menu text have the same color */
     text-decoration: none;
     color: #000;
 }
 
-/* Paragraphs have the same color*/
 p{
     color: #666
 }
@@ -67,28 +65,22 @@ p{
     justify-content: space-around;
 }
 
-
-/* Two columns, welcome text and pic */
 .col-2{
     flex-basis: 30%;
     min-width: 300px;
 }
 
-/* For the welcome pic */
 .col-2 img{
     max-width: 100%;
     padding: 25px 0;
 }
 
-/* Welcome text */
 .col-2 h1{
     font-size: 50px;
     line-height: 60px;
-    /*space from top to bottom*/
     margin: 25px 0;
 }
 
-/* Start button and hover effect */
 .btn{
     display: inline-block;
     background: #C49BBB;
@@ -104,7 +96,6 @@ p{
     background: #666;
 }
 
-/* For login and register button with effect*/
 .btnUser{
     display: inline-block;
     background: #C49BBB;
@@ -145,9 +136,7 @@ p{
     position: absolute;
     bottom: 0;
     left: 50%;
-    /* move in x-axis*/
     transform: translateX(-50%);
-
 }
 
 .col-3{
@@ -156,6 +145,7 @@ p{
     margin-bottom: 30px;
     transition: transform 0.5s;
 }
+
 .col-3:hover{
     transform: translateY(-20px);
 }
@@ -196,7 +186,6 @@ p{
     color: #000;
 }
 
-/* footer */
 .footer{
     background:#000;
     color:#666;
@@ -235,10 +224,6 @@ p{
 .footer-col-3, .footer-col-4{
     flex-basis: 10%;
     text-align: center;
-}
-
-ul{
-    list-style-type: none;
 }
 
 .app-logo{

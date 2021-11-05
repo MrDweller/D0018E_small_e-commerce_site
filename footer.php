@@ -34,10 +34,8 @@
                 </div>
             </div>
             <hr><p class="copyright">&copy; 2021 Aliroad Inc by MrDweller, MrBoi and Mr51</p>
-
         </div>
     </div>
-
 
 </body>
 </html>
