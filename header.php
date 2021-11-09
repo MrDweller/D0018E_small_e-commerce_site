@@ -19,7 +19,7 @@
         <div class="container">
             <div class="navbar">
                 <div class="logo">
-                    <img id="Aliroad" src="media/logo.png" width="500px">
+                    <img id="Aliroad" src="media/logo.png">
                 </div>
                 <nav>
                     <ul>

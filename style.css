@@ -11,9 +11,12 @@ body{
 /* Effect on the logo */
 #Aliroad{
     transition: 0.5s;
+    width: 150px;
+    height: 184px;
 }
+
 #Aliroad:hover{
-    transform: rotateY(360deg);
+    transform: rotateY(180deg);
 }
 
 .navbar{

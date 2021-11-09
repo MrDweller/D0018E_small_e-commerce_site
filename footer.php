@@ -10,7 +10,7 @@
                     </div>
                 </div>
                 <div class="footer-col-2">
-                    <img src="media/logo.png">
+                    <img id="Aliroad" src="media/logo.png">
                     <p>cheap shit for cheap price</p>
                 </div>
                 <div class="footer-col-3">
