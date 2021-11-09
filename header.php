@@ -41,7 +41,7 @@
                         
                         <img src="media/cart.png" width="35px" heigth="25px">
                         <li><a href="index.php"> Home </a></li>
-                        <li><a href=""> Products </a></li>
+                        <li><a href="products.php"> Products </a></li>
                         <li><a href="about.php"> About </a></li>
                         <li><a href=""> Contact Us </a></li>
                                 

@@ -15,8 +15,7 @@
         </div>
     </div>
 
-    <!-- features section. this section could be expanded widely depending on how we want to present the products
-         and the site. Right now we have categories(top products of each) and the most popular item on the site -->
+    <!-- features section -->
     <div class="categories">
         <div class="small-container">
             <h2 id="title">Top Products </h2>
@@ -34,12 +33,10 @@
         </div>
     </div>
 
-
     <!-- features products -->
     <div class="small-container">
         <h2 id="title">Featured products</h2>
         <div class="row">
-            <!-- Dynamic now check style.css, but needs interaction w. db PHP? --->
             <div class="col-1">
                 <img src="media/top.png">
                 <h3>Best electricity i have bought, this changed my life</h3>
