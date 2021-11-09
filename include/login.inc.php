@@ -9,7 +9,6 @@
         require_once 'functions.inc.php';
 
         // ERROR HANDLING
-
         if(emptyInputLogin($username, $pwd) !== false)
         {
             header("location: ../login.php?error=emptyinput");
