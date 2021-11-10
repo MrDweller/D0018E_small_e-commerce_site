@@ -1,4 +1,6 @@
 <?php
+
+// SIGNUP
 function emptyInputSignup($uid, $email, $pwd, $pwdrepeat)
 {
     $result = null;
@@ -112,6 +114,7 @@ function createUser($conn, $uid, $email, $pwd, $pwdrepeat)
     loginUser($conn, $uid, $pwd);
 }
 
+// LOGIN
 function emptyInputLogin($username, $pwd)
 {
     $result = null;

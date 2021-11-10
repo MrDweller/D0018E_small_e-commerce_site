@@ -11,7 +11,6 @@
         require_once 'login_functions.inc.php';
 
         // ERROR HANDLING
-
         if(emptyInputSignup($uid, $email, $pwd, $pwdrepeat) !== false)
         {
             header("location: ../signup.php?error=emptyinput");

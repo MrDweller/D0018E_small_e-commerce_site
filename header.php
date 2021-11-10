@@ -19,7 +19,7 @@
         <div class="container">
             <div class="navbar">
                 <div class="logo">
-                    <img id="Aliroad" src="media/logo.png">
+                   <a href="index.php"> <img id="Aliroad" src="media/logo.png"></a>
                 </div>
                 <nav>
                     <ul>
@@ -39,11 +39,37 @@
                             }
                         ?>
                         
-                        <img src="media/cart.png" width="35px" heigth="25px">
+                        
+                        <?php
+                            // Get the amount in your cart, but only if you're logged in
+                            if(isset($_SESSION["userid"]))
+                            {
+                                require_once 'include/db.inc.php';
+                                require_once 'include/cart_functions.inc.php';
+
+                                $cartCount = 0;
+
+                                $usersID = $_SESSION["userid"];
+
+                                $cartCount = get_amount_in_cart($conn, $usersID);
+
+                                ?>
+                                <li><a href="cart.php" class="btn"> <i class="fa fa-shopping-cart" style="font-size:25px"></i> 
+                                <?php
+                                    echo $cartCount;
+                                ?>
+                                </a></li>
+                                <?php
+                            }
+                        ?>
+
+
+                        
+                        
                         <li><a href="index.php"> Home </a></li>
                         <li><a href="products.php"> Products </a></li>
                         <li><a href="about.php"> About </a></li>
-                        <li><a href=""> Contact Us </a></li>
+                        <li><a href="contacts.php"> Contact Us </a></li>
                                 
                     </ul> 
                 </nav>
@@ -52,3 +78,4 @@
 
         </div>
     </div>
+    <br>

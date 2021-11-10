@@ -185,7 +185,7 @@ p{
 }
 
 .rating .fa{
-    font-size: 44px;
+    font-size: 22px;
     color: #000;
 }
 
@@ -299,4 +299,5 @@ p{
     background-color: #C49BBBBB;
 }
 
-/* DROPDOWN ENDS HERE, funkar som egen entitet, inte alls när det implementeras här...*/
+
+

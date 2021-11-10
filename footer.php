@@ -17,7 +17,7 @@
                     <h3>Useful shit</h3>
                     <ul>
                         <!-- add anchortags -->
-                        <li>Read more</li>
+                        <li>Read more</li> </a> 
                         <li>Join our affiliation</li>
                         <li>Return policy</li>
                     </ul>

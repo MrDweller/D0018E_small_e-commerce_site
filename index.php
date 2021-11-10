@@ -1,57 +1,34 @@
 <?php
     include_once 'header.php';
+    require_once 'include/db.inc.php';
+    require_once 'html_functions/product_functions.php';
 ?>
     <!-- welcome section -->
     <div class="row">
         <div class="col-2">
-            <h1>Buy some shiet to succeed</h1>
-            <p>Success is great</p>
-            <a href="" class="btn"> Lets go! &#8594; </a>
+            <h1>WELCOME TO ALIROAD!</h1>
+            <p>Enjoy our varied selection of the finest wares of all the different roads there is, we are Aliroad! </p>
+            <a href="products.php" class="btn"> Lets go! &#8594; </a>
         </div>
         <div class="col-2">
-            <h1> ALI </h1>
-            <img src="media/TROMP.png">
-            <h1> ROAD!</h1>
+            <img src="media/aliware_logo.png">
+            <h2> Aliwares are for everyone, go ahead and check it out!</h2>
         </div>
     </div>
+    <br>
 
-    <!-- features section -->
-    <div class="categories">
-        <div class="small-container">
-            <h2 id="title">Top Products </h2>
-            <div class="row">
-                <div class="col-3">
-                    <img src="media/feature1.jpg">
-                </div>
-                <div class="col-3">
-                    <img src="media/feature2.jpg">
-                </div>
-                <div class="col-3">
-                    <img src="media/feature3.jpg">
-                </div>
-            </div>
-        </div>
-    </div>
+    <!-- TOP products -->
+    <?php
+        $productIDs = get_featured_products($conn, 'rating');
+        display_products_productIDs($conn, $productIDs, 'Top Products', 0);
+    ?>
 
+    
     <!-- features products -->
-    <div class="small-container">
-        <h2 id="title">Featured products</h2>
-        <div class="row">
-            <div class="col-1">
-                <img src="media/top.png">
-                <h3>Best electricity i have bought, this changed my life</h3>
-                <!-- Maybe change the rating system somehow  -->
-                <div class="rating">
-                    <i class="fa fa-frown-o"></i>
-                    <i class="fa fa-frown-o"></i>
-                    <i class="fa fa-meh-o"></i>
-                    <i class="fa fa-smile-o"></i>
-                    <i class="fa fa-smile-o"></i>
-                </div>
-                <p>666 SEK</p>
-            </div>
-        </div>
-    </div>
+    <?php
+        $productIDs = get_featured_products($conn, 'quantity');
+        display_products_productIDs($conn, $productIDs, 'Featured Products', 0);
+    ?>
 
     <!-- footer -->
     <?php
