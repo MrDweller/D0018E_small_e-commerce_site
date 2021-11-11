@@ -1,12 +1,13 @@
 <?php
     require_once 'include/product_functions.inc.php';
 
-    // $amount_type says what kind of quantities to display, 0 = 'In stock' and 1 = 'In cart'
-    function display_product($conn, $productID, $amount_type) 
+    // $display_type says what way to display, 1 = product page and 0 = cart page
+    function display_product($conn, $productID, $display_type) 
     {
         $row = get_product($conn, $productID);
+
         ?>
-        <div class="col-1">
+        <div class="col-<?php echo $display_type?>">
                 <a href="include/add_to_cart.inc.php?product=<?php echo $productID;?>"> 
                     <img src=
                         <?php 
@@ -42,19 +43,25 @@
                 SEK</p>
                 <p>
                     <?php
-                        if($amount_type === 0)
+                        
+                        echo 'In stock: ';
+                        echo get_product_entry($conn, $productID);
+                        if($display_type === 0)
                         {
-                            echo 'In stock ';
-                            echo get_product_entry($conn, $productID);
-
-                        }
-                        else if($amount_type === 1)
-                        {
-                            echo 'In cart ';
+                            
                             $usersID = $_SESSION['userid'];
-                            echo check_cart_entry($conn, $usersID, $productID);
+
+                            ?>
+                                <form method="post">
+                                    <button id="incart" class="btn" type="submit" name="minus">-</button>
+                                    <?php
+                                        echo check_cart_entry($conn, $usersID, $productID);
+                                    ?>
+                                    <button id="incart" class="btn" type="submit" name="plus">+</button>
+                                </form>
+                            <?php
                         }
-                        else 
+                        else if($display_type !== 1 && $display_type !== 0)
                         {
                             echo 'ERROR: INVALID AMOUNT TYPE IN PRODUCT_FUNCTIONS!!!';
                         }
@@ -65,7 +72,7 @@
         <?php
     }
 
-    function display_products_productIDs($conn, $productIDs, $title, $amount_type)
+    function display_products_productIDs($conn, $productIDs, $title, $display_type)
     {
         ?>
         <div class="small-container">
@@ -79,7 +86,7 @@
                     for($i = 0; $i < sizeof($productIDs); $i++)
                     {
                         $id = $productIDs[$i];
-                        display_product($conn, $id, $amount_type);
+                        display_product($conn, $id, $display_type);
 
                         // if a row is full
                         if(($i + 1) % 4 === 0)
