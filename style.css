@@ -95,6 +95,11 @@ p{
     text-align: center;
 }
 
+#incart{
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
 .btn{
     display: inline-block;
     background: #C49BBB;
@@ -176,6 +181,22 @@ p{
     margin-right: auto;
 }
 
+.col-0{
+    flex-basis: 20%;
+    padding: 10px;
+    min-width: 200px;
+    margin-bottom: 50px;
+    transition: transform 0.5s;
+}
+
+.col-0 img{
+    width: 100%;
+}
+
+.col-0 p{
+    font-size: 20px;
+}
+
 .col-1{
     flex-basis: 20%;
     padding: 10px;
@@ -189,7 +210,7 @@ p{
 }
 
 .col-1 p{
-    font-size: 22px;
+    font-size: 20px;
 }
 
 .col-1:hover{

@@ -14,7 +14,7 @@
     <!-- Top products -->
     <?php
         $productIDs = get_featured_products($conn, 'rating');
-        display_products_productIDs($conn, $productIDs, 'Top Products', 0);
+        display_products_productIDs($conn, $productIDs, 'Top Products', 1);
     ?>
 
     <div class="dropdown">
@@ -44,7 +44,7 @@
             }
         }
         $productIDs = get_productIDs($conn, $order);
-        display_products_productIDs($conn, $productIDs, 'Products', 0);
+        display_products_productIDs($conn, $productIDs, 'Products', 1);
         
     ?>
 

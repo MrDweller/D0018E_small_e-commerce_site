@@ -12,7 +12,7 @@
         
         $productIDs = get_productIDs_from_cart($conn, $usersID);
 
-        display_products_productIDs($conn, $productIDs, "Shopping Cart", 1);
+        display_products_productIDs($conn, $productIDs, "Shopping Cart", 0);
     }
     else 
     {
