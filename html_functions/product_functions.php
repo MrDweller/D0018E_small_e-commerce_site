@@ -1,4 +1,5 @@
 <?php
+
     require_once 'include/product_functions.inc.php';
 
     // $display_type says what way to display, 1 = product page and 0 = cart page
@@ -52,12 +53,14 @@
                             $usersID = $_SESSION['userid'];
 
                             ?>
-                                <form method="post">
-                                    <button id="incart" class="btn" type="submit" name="minus">-</button>
+                                <form action="include/alter_cart.inc.php?minus=<?php echo $productID; ?>" method="post">
+                                    <button id="incart" class="btn" type="submit">-</button>
+                                </form>
                                     <?php
                                         echo check_cart_entry($conn, $usersID, $productID);
                                     ?>
-                                    <button id="incart" class="btn" type="submit" name="plus">+</button>
+                                <form action="include/alter_cart.inc.php?plus=<?php echo $productID; ?>" method="post">
+                                    <button id="incart" class="btn" type="submit">+</button>
                                 </form>
                             <?php
                         }

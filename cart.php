@@ -23,8 +23,6 @@
     ?>
         <a id="checkout" class="btn" href="include/checkout.inc.php"> Checkout </a>
         
-        
-
     <?php
 
 
