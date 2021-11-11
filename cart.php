@@ -20,6 +20,13 @@
         exit();
     }
 
+    ?>
+        <li> <a class="btn" href="checkout.php"> Checkout </a></li>
+        
+        
+
+    <?php
+
 
     include_once 'footer.php';
 ?>
