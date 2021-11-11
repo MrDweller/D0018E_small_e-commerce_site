@@ -57,7 +57,7 @@
 
     function get_productIDs_from_cart($conn, $usersID)
     {
-        $sql = "SELECT products_productID FROM cart WHERE users_usersID = $usersID;";
+        $sql = "SELECT products_productID FROM cart WHERE users_usersID = $usersID AND amount > 0;";
 
         $result = mysqli_query($conn, $sql);
 
@@ -101,4 +101,104 @@
         } 
 
         return $amount;
+    }
+
+    function compare_amount_with_stock($conn, $productID, $amount)
+    {
+        $sql = "SELECT quantity FROM products WHERE productID = $productID;";
+
+        $result = mysqli_query($conn, $sql);
+
+        $resultCheck = mysqli_num_rows($result);
+
+        $row = mysqli_fetch_assoc($result);
+
+        if($resultCheck > 0)
+        {
+            $amount = $row['quantity'] - $amount;
+
+            if($amount >= 0)
+            {
+                return true;
+            }
+        } 
+
+        return false;
+    }
+
+    function reserve_product($conn, $productID, $amount)
+    {
+        require_once 'product_functions.inc.php';
+
+        $quantity = get_product_entry($conn, $productID);
+
+        $sql = "UPDATE products SET quantity = ($quantity - $amount) WHERE productID = $productID;";
+        
+        if (mysqli_query($conn, $sql)) {
+            echo "Record reserved successfully\n";
+        } else {
+            echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+        }
+    }
+
+    function undo_reserve_product($conn, $productID, $amount)
+    {
+        require_once 'product_functions.inc.php';
+
+        $quantity = get_product_entry($conn, $productID);
+
+        $sql = "UPDATE products SET quantity = ($quantity + $amount) WHERE productID = $productID;";
+        
+        if (mysqli_query($conn, $sql)) {
+            echo "Record unreserved successfully\n";
+        } else {
+            echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+        }
+    }
+
+    function empty_cart($conn, $usersID, $productIDs)
+    {
+        for($i = 0; $i < sizeof($productIDs); $i++)
+        {
+            alter_cart_amount($conn, $usersID, $productIDs[$i], 0);
+        }
+
+    }
+
+    function checkout($conn, $usersID, $productIDs, $i)
+    {
+        if($i >= sizeof($productIDs))
+        {
+            return true;
+        }
+
+        $amount = check_cart_entry($conn, $usersID, $productIDs[$i]);
+        $result = compare_amount_with_stock($conn, $productIDs[$i], $amount);
+        echo $productIDs[$i];
+        echo "\n";
+        echo $amount;
+        echo "\n";
+        echo $result;
+
+        if($result === true)
+        {
+            reserve_product($conn, $productIDs[$i], $amount);
+
+            if(checkout($conn, $usersID, $productIDs, $i + 1))
+            {
+                return true;
+            }
+            else 
+            {
+                undo_reserve_product($conn, $productIDs[$i], $amount);
+                return false;
+            }
+        }
+        else
+        {
+            return false;
+        }
+
+
+
     }

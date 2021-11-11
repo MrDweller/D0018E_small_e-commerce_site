@@ -84,9 +84,15 @@ p{
     margin: 25px 0;
 }
 
-.button{
-    position: absolute;
-    margin-left: 250px;
+#checkout{
+    display: block;
+    margin-top: 1%;
+    margin-bottom: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 10%;
+
+    text-align: center;
 }
 
 .btn{
@@ -166,8 +172,8 @@ p{
 .small-container{
     max-width: 2000px;
     margin: auto;
-    padding-left: 30px;
-    padding-right: 0;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .col-1{
