@@ -9,22 +9,22 @@
 
         $usersID = $_SESSION["userid"];
 
-        if(isset($_GET["plus"]))
+        if(isset($_GET["prodID"]))
         {
-            echo "Kom in i plus-satsen";
-            $productID = $_GET["plus"];
-            $amount = check_cart_entry($conn, $usersID, $productID);
-            alter_cart_amount($conn, $usersID, $productID, ($amount + 1));
-            header("location: ../cart.php");
-            exit();
-        }
-        
-        if(isset($_GET["minus"]))
-        {
-            echo "Kom in i minus-satsen";
-            $productID = $_GET["minus"];
-            $amount = check_cart_entry($conn, $usersID, $productID);
-            alter_cart_amount($conn, $usersID, $productID, ($amount - 1));
+            $productID = $_GET["prodID"];
+
+            if(isset($_POST["minus"]))
+            {
+                $amount = check_cart_entry($conn, $usersID, $productID);
+                alter_cart_amount($conn, $usersID, $productID, ($amount - 1));
+            }
+
+            if(isset($_POST["plus"]))
+            {
+                $amount = check_cart_entry($conn, $usersID, $productID);
+                alter_cart_amount($conn, $usersID, $productID, ($amount + 1));
+            }
+            
             header("location: ../cart.php");
             exit();
         }

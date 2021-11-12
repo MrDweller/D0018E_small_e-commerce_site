@@ -53,14 +53,12 @@
                             $usersID = $_SESSION['userid'];
 
                             ?>
-                                <form action="include/alter_cart.inc.php?minus=<?php echo $productID; ?>" method="post">
-                                    <button id="incart" class="btn" type="submit">-</button>
-                                </form>
+                                <form action="include/alter_cart.inc.php?prodID=<?php echo $productID; ?>" method="post">
+                                    <button id="incart" class="btn" type="submit" name="minus">-</button>
                                     <?php
                                         echo check_cart_entry($conn, $usersID, $productID);
                                     ?>
-                                <form action="include/alter_cart.inc.php?plus=<?php echo $productID; ?>" method="post">
-                                    <button id="incart" class="btn" type="submit">+</button>
+                                    <button id="incart" class="btn" type="submit" name="plus">+</button>
                                 </form>
                             <?php
                         }
