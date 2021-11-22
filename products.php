@@ -55,7 +55,7 @@
         <div class="col-2">
             <h1>Walk on down the Aliroad :)</h1>
             <p>BUY a pair of yellow sneakers for your legs!</p>
-            <a href="include/add_to_cart.inc.php?product=<?php echo 1;?>" class="btn"> BUY NOW FOR ONLY 99 SEK </a>
+            <a href="include/add_to_cart.inc.php?product=<?php echo 9;?>" class="btn"> BUY NOW FOR ONLY 99 SEK </a>
         </div>
         <div class="col-2">
             <h1> Walk with us </h1>
