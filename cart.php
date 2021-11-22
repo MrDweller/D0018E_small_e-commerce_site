@@ -21,7 +21,7 @@
     }
 
     ?>
-        <a id="checkout" class="btn" href="include/checkout.inc.php"> Checkout </a>
+        <a id="checkout" class="btn" href="checkoutform.php"> Checkout </a>
         
     <?php
 

@@ -7,19 +7,19 @@
         if($_GET['success'] === 'true')
         {
             ?>
-                <p>THANK TOU FOR PURSHES</p>
+                <h1 class="center_div">ZANG KYO FOR PURSHES!</h1>
             <?php
         }
         else if($_GET['success'] === 'false')
         {
             ?>
-                <p>PURSHES FAILED</p>
+                <h1 class="center_div">PURSHES FAILED!</h1>
             <?php
         }
         else 
         {
             ?>
-                <p>NOTHING TO CHECKOUT!</p>
+                <h1 class="center_div">NOTHING TO CHECKOUT!</h1>
             <?php
         }
     }
