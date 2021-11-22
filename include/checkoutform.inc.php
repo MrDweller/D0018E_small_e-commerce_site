@@ -1,10 +1,10 @@
 <?php
+    session_start();
 
     if(isset($_POST["submit"]))
     {
         $fname = $_POST["fname"];
         $lname = $_POST["lname"];
-        $email = $_POST["email"];
         $address = $_POST["address"];
         $city = $_POST["city"];
         $postcode = $_POST["postcode"];
@@ -15,7 +15,7 @@
 
 
         // ERROR HANDLING
-        if(empty_input_checkout($fname, $lname, $email, $address, $city, $postcode) !== false)
+        if(empty_input_checkout($fname, $lname, $address, $city, $postcode) !== false)
         {
             header("location: ../checkoutform.php?error=emptyinput");
             exit();
@@ -30,12 +30,6 @@
         if(invalid_name($lname) !== false)
         {
             header("location: ../checkoutform.php?error=invalidLname");
-            exit();
-        }
-
-        if(invalid_email($email) !== false)
-        {
-            header("location: ../checkoutform.php?error=invalidEmail");
             exit();
         }
 
@@ -57,7 +51,24 @@
             exit();
         }
 
-        header("location: checkout.inc.php");
+        if(isset($_SESSION["userid"]))
+        {
+            $usersID = $_SESSION["userid"];
+
+            if(check_billing_info_exists($conn, $usersID))
+            {
+                update_billing_info($conn, $usersID, $fname, $lname, $city, $address, $postcode);
+            }
+            else 
+            {
+                add_to_billing_info($conn, $usersID, $fname, $lname, $city, $address, $postcode);
+            }
+
+            header("location: checkout.inc.php");
+            exit();
+        }
+
+        header("location: ../login.php");
         exit();
 
     }

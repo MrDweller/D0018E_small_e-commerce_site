@@ -1,17 +1,37 @@
 <?php
     include_once 'header.php';
+    require_once 'include/db.inc.php';
+    require_once 'include/checkoutform_functions.inc.php';
+
+    $fname = '';
+    $lname = '';
+    $address = '';
+    $city = '';
+    $postcode = '';
+
+    if(isset($_SESSION["userid"]))
+    {
+        $row = get_billing_info($conn, $usersID);
+        if($row !== false)
+        {
+            $fname = $row['fname'];
+            $lname = $row['lname'];
+            $address = $row['address'];
+            $city = $row['city'];
+            $postcode = $row['postcode'];
+        }
+    }
 ?>
 
     <section class="checkout-form">
         <div class="signup-form-form">
             <h2>Billing Address</h2><br>
             <form action="include/checkoutform.inc.php" method="post">
-                <input type="text" name="fname" placeholder="First name"><br>
-                <input type="text" name="lname" placeholder="Last name"><br>
-                <input type="text" name="email" placeholder="Email"><br>
-                <input type="text" name="address" placeholder="Address"><br>
-                <input type="text" name="city" placeholder="City"><br>
-                <input type="text" name="postcode" placeholder="Postcode"><br>
+                <input type="text" name="fname" placeholder="First name" value="<?php echo $fname ?>"><br>
+                <input type="text" name="lname" placeholder="Last name" value="<?php echo $lname ?>"><br>
+                <input type="text" name="address" placeholder="Address" value="<?php echo $address ?>"><br>
+                <input type="text" name="city" placeholder="City" value="<?php echo $city ?>"><br>
+                <input type="text" name="postcode" placeholder="Postcode" value="<?php echo $postcode ?>"><br>
                 <button class="btn" type="submit" name="submit">Confirm Checkout</button>
 
 
