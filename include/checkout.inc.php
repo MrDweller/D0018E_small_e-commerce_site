@@ -14,6 +14,8 @@
         {
             if(checkout($conn, $usersID, $productIDs, 0))
             {
+                require_once 'shop_history_functions.inc.php';
+                save_to_shop_history($conn, $usersID, $productIDs);
                 empty_cart($conn, $usersID, $productIDs);
                 header("location: ../checkout.php?success=true");
                 exit();

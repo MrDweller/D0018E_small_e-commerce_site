@@ -8,6 +8,15 @@
         return $row;
     }
 
+    function get_product_name($conn, $productID)
+    {
+        $sql = "SELECT productName FROM products WHERE products.productID = $productID;";
+
+        $result = mysqli_query($conn, $sql);
+        $row  = mysqli_fetch_assoc($result);
+        return $row['productName'];
+    }
+
     function get_productIDs($conn, $sql_ORDER_BY)
     {
         $sql = "SELECT productID FROM products $sql_ORDER_BY;";
