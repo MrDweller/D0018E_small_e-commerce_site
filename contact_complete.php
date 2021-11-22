@@ -10,7 +10,6 @@
         $fname = $_POST["firstname"];
         $lname = $_POST["lastname"];
 
-        # insert shiet here
         if(isset($_SESSION["userid"]))
         {
             $userid = $_SESSION["userid"];
@@ -21,10 +20,6 @@
             fwrite($handle, $message);
             fclose($handle);
         }
-        
-
-        
-
 ?>  
 
     <h1 class="center_div">ZANG KYO FOR YOUR OPINION, WE DONT CARE(ok we CARE)!</h1>

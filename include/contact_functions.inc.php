@@ -70,8 +70,6 @@ function get_form_info($conn, $usersID)
 function add_contact_info($conn, $usersID, $fname, $lname, $message)
 {
 
-    # insert shiet here
-
     $sql = "INSERT INTO contact_info (users_usersID, fname, lname, msg) VALUES ($usersID, '$fname', '$lname', NULL);";
     $insert_result = mysqli_query($conn, $sql);
 
@@ -92,7 +90,6 @@ function add_contact_info($conn, $usersID, $fname, $lname, $message)
 
     if ($insert_result) 
     {
-        echo "New record created successfully";
         return $filepath;
     } 
     else 
@@ -101,10 +98,7 @@ function add_contact_info($conn, $usersID, $fname, $lname, $message)
         return false;
     }
 
-
 }
-
-
 
 
 ?>
