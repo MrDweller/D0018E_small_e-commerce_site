@@ -66,6 +66,7 @@ function invalid_address($address)
     return $result;
 }
 
+
 function invalid_city($city)
 {
     $result = null;
@@ -81,6 +82,7 @@ function invalid_city($city)
 
     return $result;
 }
+
 
 function invalid_postcode($postcode)
 {
