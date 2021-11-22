@@ -13,7 +13,7 @@
         if(check_billing_info_exists($conn, $usersID))
         {
             $usersID = $_SESSION["userid"];
-            $row = get_contact_info($conn, $usersID);
+            $row = get_form_info($conn, $usersID);
             if($row !== false)
             {
                 $fname = $row['fname'];
