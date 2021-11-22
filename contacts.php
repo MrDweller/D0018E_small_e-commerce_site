@@ -29,7 +29,7 @@
     <div class="col-2">
         <div class="contact-form-form">
             <h2> Contact us </h2>
-            <form action="include/contacts.inc.php" method="post">
+            <form action="contact_complete.php" method="post">
 
                 <label for="fname">First Name:</label><br>
                 <input type="text" id="fname" name="firstname" placeholder="Enter your name.." value="<?php echo $fname ?>"><br>
@@ -96,7 +96,6 @@
             </ul>
 
 
-        
         <h3> &#64; Email:</h3>
             <ul>
                 <a href = "mailto: arimas-8@student.ltu.se">arimas-8@student.ltu.se</a><br>
@@ -110,8 +109,6 @@
 
 
 </section>
-
-
 
 
 <?php

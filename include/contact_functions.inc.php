@@ -49,8 +49,6 @@ function invalidLname($lname)
 }
 
 
-// get contact info func
-
 function get_contact_info($conn, $usersID)
 {
     $sql = "SELECT * FROM billing_info WHERE users_usersID = $usersID;";
@@ -66,6 +64,14 @@ function get_contact_info($conn, $usersID)
     }
     
     return false;
+}
+
+
+function add_contact_info($conn, $usersID, $fname, $lname, $message)
+{
+
+    # insert shiet here
+
 }
 
 ?>
