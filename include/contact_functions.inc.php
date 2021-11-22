@@ -48,4 +48,24 @@ function invalidLname($lname)
     return $result;
 }
 
+
+// get contact info func
+
+function get_contact_info($conn, $usersID)
+{
+    $sql = "SELECT * FROM billing_info WHERE users_usersID = $usersID;";
+
+    $result = mysqli_query($conn, $sql);
+
+    $resultCheck = mysqli_num_rows($result);
+
+    if($resultCheck > 0)
+    {
+        $row = mysqli_fetch_assoc($result);
+        return $row;
+    }
+    
+    return false;
+}
+
 ?>

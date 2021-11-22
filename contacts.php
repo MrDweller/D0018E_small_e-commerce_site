@@ -1,5 +1,28 @@
 <?php
     include_once 'header.php';
+    require_once 'include/db.inc.php';
+    require_once 'include/contact_functions.inc.php';
+    require_once 'include/checkoutform_functions.inc.php';
+
+    $fname = '';
+    $lname = '';
+
+    if(isset($_SESSION["userid"]))
+    {
+
+        if(check_billing_info_exists($conn, $usersID))
+        {
+            $usersID = $_SESSION["userid"];
+            $row = get_contact_info($conn, $usersID);
+            if($row !== false)
+            {
+                $fname = $row['fname'];
+                $lname = $row['lname'];
+            }
+        }
+        
+    }
+
 ?>
 
 <section class="row">
@@ -9,9 +32,9 @@
             <form action="include/contacts.inc.php" method="post">
 
                 <label for="fname">First Name:</label><br>
-                <input type="text" id="fname" name="firstname" placeholder="Enter your name.."><br>
+                <input type="text" id="fname" name="firstname" placeholder="Enter your name.." value="<?php echo $fname ?>"><br>
                 <label for="lname">Last Name:</label><br>
-                <input type="text" id="lname" name="lastname" placeholder="Enter your last name.."><br>
+                <input type="text" id="lname" name="lastname" placeholder="Enter your last name.." value="<?php echo $lname ?>"><br>
 
                 <label for="country">Continent:</label><br>
                 <select id="continent" name="continent">
