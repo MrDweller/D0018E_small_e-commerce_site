@@ -4,9 +4,10 @@
     require_once 'include/contact_functions.inc.php';
     require_once 'include/checkoutform_functions.inc.php';
 
+
+    # Autofill stuff
     $fname = '';
     $lname = '';
-
     if(isset($_SESSION["userid"]))
     {
 
@@ -25,11 +26,12 @@
 
 ?>
 
+
 <section class="row">
     <div class="col-2">
         <div class="contact-form-form">
             <h2> Contact us </h2>
-            <form action="contact_complete.php" method="post">
+            <form action="include/contacts.inc.php" method="post">
 
                 <label for="fname">First Name:</label><br>
                 <input type="text" id="fname" name="firstname" placeholder="Enter your name.." value="<?php echo $fname ?>"><br>

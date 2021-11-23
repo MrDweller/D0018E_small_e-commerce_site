@@ -16,27 +16,11 @@ function emptyInputContact($fname, $lname, $subject)
     return $result;
 }
 
-function invalidFname($fname)
+function invalidName($name)
 {
     $result = null;
 
-    if(!preg_match("/^[a-zA-Z]*$/", $fname))
-    {
-        $result = true;
-    }
-    else
-    {
-        $result = false;
-    }
-
-    return $result;
-}
-
-function invalidLname($lname)
-{
-    $result = null;
-
-    if(!preg_match("/^[a-zA-Z]*$/", $lname))
+    if(!preg_match("/^\pL+$/u", $name))
     {
         $result = true;
     }
@@ -62,7 +46,7 @@ function add_contact_info($conn, $fname, $lname, $message)
     if($resultCheck > 0)
     {
         $row = mysqli_fetch_assoc($result);
-        $filepath = 'angry_letters/message-'.strval($row["contactID"]).'.txt';
+        $filepath = '../angry_letters/message-'.strval($row["contactID"]).'.txt';
         $cID = $row["contactID"];
         $sql_query = "UPDATE contact_info SET msg = '$filepath' WHERE contactID = $cID";
         mysqli_query($conn, $sql_query);
@@ -79,6 +63,17 @@ function add_contact_info($conn, $fname, $lname, $message)
         return false;
     }
 
+}
+
+function complete_contact($conn, $fname, $lname, $message)
+{
+    $filename = add_contact_info($conn, $fname, $lname, $message);
+    
+    $handle = fopen($filename, 'w');
+
+    fwrite($handle, $message);
+    fclose($handle);
+    
 }
 
 
