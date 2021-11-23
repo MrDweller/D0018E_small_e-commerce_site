@@ -105,11 +105,7 @@
                 <a href = "mailto: frastc-9@student.ltu.se">frastc-9@student.ltu.se</a><br>
             </ul><br>
     </div>
-
-
-
-
-
+    
 </section>
 
 

@@ -16,7 +16,6 @@ function empty_input_checkout($fname, $lname, $address, $city, $postcode)
     return $result;
 }
 
-
 function invalid_name($name)
 {
     $result = null;
@@ -32,7 +31,6 @@ function invalid_name($name)
 
     return $result;
 }
-
 
 function invalid_address($address)
 {
@@ -88,7 +86,9 @@ function add_to_billing_info($conn, $usersID, $fname, $lname, $city, $address, $
         
     if (mysqli_query($conn, $sql)) {
         echo "New record created successfully";
-    } else {
+    } 
+    else 
+    {
         echo "Error: " . $sql . "<br>" . mysqli_error($conn);
     }
 }

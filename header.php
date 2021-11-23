@@ -68,9 +68,6 @@
                                 <?php
                             }
                         ?>
-
-
-                        
                         
                         <li><button class=btn3 onclick="button_press('index.php')"> Home </button></li>
                         <li><button class=btn3 onclick="button_press('products.php')"> Products </button></li>

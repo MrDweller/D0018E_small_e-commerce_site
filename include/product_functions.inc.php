@@ -1,4 +1,5 @@
 <?php
+
     function get_product($conn, $productID)
     {
         $sql = "SELECT * FROM products WHERE products.productID = $productID;";

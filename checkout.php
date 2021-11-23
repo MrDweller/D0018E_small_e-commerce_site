@@ -30,8 +30,6 @@
     }
 
 
-    
-
 
     include_once 'footer.php';
 ?>

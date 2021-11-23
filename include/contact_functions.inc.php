@@ -76,5 +76,4 @@ function complete_contact($conn, $fname, $lname, $message)
     
 }
 
-
 ?>

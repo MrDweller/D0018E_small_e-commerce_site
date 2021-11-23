@@ -1,7 +1,5 @@
 <?php
 
-
-
 if(isset($_POST["submit"])){
     $fname = $_POST["firstname"];
     $lname = $_POST["lastname"];
@@ -10,8 +8,6 @@ if(isset($_POST["submit"])){
     require_once 'db.inc.php';
     require_once 'contact_functions.inc.php';
     
-
-
     // ERROR HANDLING
     if(emptyInputContact($fname, $lname, $message) !== false)
     {
@@ -35,13 +31,10 @@ if(isset($_POST["submit"])){
     header("location: ../contact_complete.php");
     exit();
 }
-else{
+else
+{
     header("location: ../contacts.php");
     exit();
 }
-
-
-
-
 
 ?>

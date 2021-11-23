@@ -1,4 +1,5 @@
 <?php
+
     session_start();
 
     if(isset($_POST["submit"]))
@@ -11,8 +12,6 @@
 
         require_once 'db.inc.php';
         require_once 'checkoutform_functions.inc.php';
-
-
 
         // ERROR HANDLING
         if(empty_input_checkout($fname, $lname, $address, $city, $postcode) !== false)

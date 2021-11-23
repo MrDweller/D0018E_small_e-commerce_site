@@ -11,17 +11,18 @@
         <div class="col-<?php echo $display_type?>">
                 <button class="img_btn" onclick="button_press_scroll('include/add_to_cart.inc.php?product=<?php echo $productID;?>')"><img src=<?php echo $row['image']; ?>> </button> 
                 
-                
                 <h3>
                     <?php
                         echo $row['productName'];
                     ?>
                 </h3>
+
                 <div>
                     <?php
                         echo $row['description'];
                     ?>
                 </div>
+
                 <div class="rating">
                     <?php
                         for($i = 0; $i < $row['rating']; $i++)
@@ -39,13 +40,11 @@
                 SEK</p>
                 <p>
                     <?php
-                        
                         echo 'In stock: ';
-                        echo get_product_entry($conn, $productID);
-                        
-                    ?>
-                        
+                        echo get_product_entry($conn, $productID);   
+                    ?>     
                 </p>
+
                 <?php
                     if($display_type === 0)
                     {
@@ -64,7 +63,7 @@
                     {
                         echo 'ERROR: INVALID AMOUNT TYPE IN PRODUCT_FUNCTIONS!!!';
                     }
-                        
+                      
                 ?>
                 
             </div>
@@ -80,6 +79,7 @@
                     echo $title;
                 ?>
             </h2>
+
                 <div class="row">
                     <?php
                     for($i = 0; $i < sizeof($productIDs); $i++)
@@ -101,7 +101,7 @@
                     ?>
                 </div>
         </div>
-        <?php
-    }
 
+<?php
+    }
 ?>

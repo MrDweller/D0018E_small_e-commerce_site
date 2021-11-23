@@ -23,8 +23,6 @@
     ?>
         <button id="checkout" class="btn" onclick='button_press("checkoutform.php")'> Checkout </button>
         
-    <?php
-
-
+<?php
     include_once 'footer.php';
 ?>

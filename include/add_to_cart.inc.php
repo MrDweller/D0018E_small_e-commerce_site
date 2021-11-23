@@ -5,10 +5,9 @@
         require_once 'db.inc.php';
         require_once 'cart_functions.inc.php';
 
-        // ERROR HANDLING
-
         session_start();
 
+        // ERROR HANDLING
         if(isset($_SESSION["useruid"]))
         {
             $productID = $_GET["product"];

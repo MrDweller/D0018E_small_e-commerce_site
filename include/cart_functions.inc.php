@@ -81,13 +81,10 @@
     function get_amount_in_cart($conn, $usersID)
     {
         $sql = "SELECT amount FROM cart WHERE users_usersID = $usersID;";
-
         $result = mysqli_query($conn, $sql);
-
         $resultCheck = mysqli_num_rows($result);
-
-
         $amount = 0;
+
         if($resultCheck > 0)
         {
             $i = 0;
@@ -136,7 +133,9 @@
         
         if (mysqli_query($conn, $sql)) {
             echo "Record reserved successfully\n";
-        } else {
+        } 
+        else 
+        {
             echo "Error: " . $sql . "<br>" . mysqli_error($conn);
         }
     }
@@ -151,7 +150,9 @@
         
         if (mysqli_query($conn, $sql)) {
             echo "Record unreserved successfully\n";
-        } else {
+        } 
+        else
+        {
             echo "Error: " . $sql . "<br>" . mysqli_error($conn);
         }
     }
