@@ -39,3 +39,7 @@
 
 </body>
 </html>
+
+<script>
+    set_scroll();
+</script>

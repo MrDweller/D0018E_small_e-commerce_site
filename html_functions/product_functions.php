@@ -9,13 +9,8 @@
 
         ?>
         <div class="col-<?php echo $display_type?>">
-                <a href="include/add_to_cart.inc.php?product=<?php echo $productID;?>"> 
-                    <img src=
-                        <?php 
-                            echo $row['image'];
-                        ?>
-                    > 
-                </a>
+                <button onclick="button_press_scroll('include/add_to_cart.inc.php?product=<?php echo $productID;?>')"><img src=<?php echo $row['image']; ?>> </button> 
+                
                 
                 <h3>
                     <?php
@@ -47,28 +42,31 @@
                         
                         echo 'In stock: ';
                         echo get_product_entry($conn, $productID);
-                        if($display_type === 0)
-                        {
-                            
-                            $usersID = $_SESSION['userid'];
-
-                            ?>
-                                <form action="include/alter_cart.inc.php?prodID=<?php echo $productID; ?>" method="post">
-                                    <button id="incart" class="btn" type="submit" name="minus">-</button>
-                                    <?php
-                                        echo check_cart_entry($conn, $usersID, $productID);
-                                    ?>
-                                    <button id="incart" class="btn" type="submit" name="plus">+</button>
-                                </form>
-                            <?php
-                        }
-                        else if($display_type !== 1 && $display_type !== 0)
-                        {
-                            echo 'ERROR: INVALID AMOUNT TYPE IN PRODUCT_FUNCTIONS!!!';
-                        }
                         
                     ?>
+                        
                 </p>
+                <?php
+                    if($display_type === 0)
+                    {
+                        
+                        $usersID = $_SESSION['userid'];
+
+                        ?>
+                            <button onclick="button_press_scroll('include/alter_cart.inc.php?prodID=<?php echo $productID; ?>&minus')" class="btn" >-</button>
+                            <?php
+                                echo check_cart_entry($conn, $usersID, $productID);
+                            ?>
+                            <button onclick="button_press_scroll('include/alter_cart.inc.php?prodID=<?php echo $productID; ?>&plus')" class="btn" >+</button>
+                        <?php
+                    }
+                    else if($display_type !== 1 && $display_type !== 0)
+                    {
+                        echo 'ERROR: INVALID AMOUNT TYPE IN PRODUCT_FUNCTIONS!!!';
+                    }
+                        
+                ?>
+                
             </div>
         <?php
     }

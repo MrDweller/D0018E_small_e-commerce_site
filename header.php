@@ -1,5 +1,6 @@
 <?php 
     session_start();
+    require_once 'javascript/auto_scroll.php';
 ?>
 
 <!DOCTYPE html>
@@ -27,15 +28,19 @@
                             if(isset($_SESSION["useruid"]))
                             {
                                 $uid = $_SESSION["useruid"];
-                                echo '<li> <a href="include/logout.inc.php" class="btn"> Log out </a></li>';
-                                echo '<li> <a href="account.php" class="btn">';
-                                echo $uid;
-                                echo '</a></li>';
+                                ?>
+                                    <li> <button onclick='button_press("include/logout.inc.php")' class="btn"> Log out </button></li>
+                                    <li> <button onclick='button_press("account.php")' class="btn">
+                                <?php echo $uid; ?>
+                                    </button></li>
+                                <?php
                             }
                             else 
                             {
-                                echo '<li> <a href="login.php" class="btn"> Login </a></li>';
-                                echo '<li> <a href="signup.php" class="btn"> Sign up </a></li>';
+                                ?>
+                                <li> <button onclick='button_press("login.php")' class="btn"> Login </button></li>
+                                <li> <button onclick='button_press("signup.php")' class="btn"> Sign up </button></li>
+                                <?php
                             }
                         ?>
                         
@@ -54,11 +59,12 @@
                                 $cartCount = get_amount_in_cart($conn, $usersID);
 
                                 ?>
-                                <li><a href="cart.php" class="btn"> <i class="fa fa-shopping-cart" style="font-size:25px"></i> 
+                                <li><button onclick="button_press('cart.php')" class="btn" > <i class="fa fa-shopping-cart" style="font-size:25px"></i> 
                                 <?php
                                     echo $cartCount;
                                 ?>
-                                </a></li>
+                                </button>
+                                </li>
                                 <?php
                             }
                         ?>
@@ -66,10 +72,10 @@
 
                         
                         
-                        <li><a href="index.php"> Home </a></li>
-                        <li><a href="products.php"> Products </a></li>
-                        <li><a href="about.php"> About </a></li>
-                        <li><a href="contacts.php"> Contact Us </a></li>
+                        <li><button class=btn onclick="button_press('index.php')"> Home </button></li>
+                        <li><button class=btn onclick="button_press('products.php')"> Products </button></li>
+                        <li><button class=btn onclick="button_press('about.php')"> About </a></li>
+                        <li><button class=btn onclick="button_press('contacts.php')"> Contact Us </a></li>
                                 
                     </ul> 
                 </nav>

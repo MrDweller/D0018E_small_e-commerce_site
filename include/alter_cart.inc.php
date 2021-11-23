@@ -13,13 +13,13 @@
         {
             $productID = $_GET["prodID"];
 
-            if(isset($_POST["minus"]))
+            if(isset($_GET["minus"]))
             {
                 $amount = check_cart_entry($conn, $usersID, $productID);
                 alter_cart_amount($conn, $usersID, $productID, ($amount - 1));
             }
 
-            if(isset($_POST["plus"]))
+            if(isset($_GET["plus"]))
             {
                 $amount = check_cart_entry($conn, $usersID, $productID);
                 alter_cart_amount($conn, $usersID, $productID, ($amount + 1));

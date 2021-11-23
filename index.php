@@ -30,6 +30,11 @@
         display_products_productIDs($conn, $productIDs, 'Featured Products', 1);
     ?>
 
+
+    
+    <button class="btn" onclick="button_press_scroll('index.php')">Magic Scroll</button> 
+    
+
     <!-- footer -->
     <?php
         include_once 'footer.php'
