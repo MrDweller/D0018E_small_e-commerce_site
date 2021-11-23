@@ -72,10 +72,10 @@
 
                         
                         
-                        <li><button class=btn onclick="button_press('index.php')"> Home </button></li>
-                        <li><button class=btn onclick="button_press('products.php')"> Products </button></li>
-                        <li><button class=btn onclick="button_press('about.php')"> About </a></li>
-                        <li><button class=btn onclick="button_press('contacts.php')"> Contact Us </a></li>
+                        <li><button class=btn3 onclick="button_press('index.php')"> Home </button></li>
+                        <li><button class=btn3 onclick="button_press('products.php')"> Products </button></li>
+                        <li><button class=btn3 onclick="button_press('about.php')"> About </a></li>
+                        <li><button class=btn3 onclick="button_press('contacts.php')"> Contact Us </a></li>
                                 
                     </ul> 
                 </nav>

@@ -9,7 +9,7 @@
 
         ?>
         <div class="col-<?php echo $display_type?>">
-                <button onclick="button_press_scroll('include/add_to_cart.inc.php?product=<?php echo $productID;?>')"><img src=<?php echo $row['image']; ?>> </button> 
+                <button class="img_btn" onclick="button_press_scroll('include/add_to_cart.inc.php?product=<?php echo $productID;?>')"><img src=<?php echo $row['image']; ?>> </button> 
                 
                 
                 <h3>

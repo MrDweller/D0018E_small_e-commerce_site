@@ -110,6 +110,20 @@ p{
     margin-bottom: 1%;
 }
 
+.img_btn{
+    border: 0;
+}
+
+.btn3{
+    display: inline-block;
+    background: none;
+    color: black;
+    font-size: 20px;
+    transition: background 0.5s;
+    border: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
 .btn2{
     display: inline-block;
     background: none;
@@ -130,6 +144,7 @@ p{
     display: inline-block;
     background: #C49BBB;
     color: #fff;
+    font-size: 18px;
     padding: 10px 20px;
     margin: 30px 0;
     border-radius: 20px;
