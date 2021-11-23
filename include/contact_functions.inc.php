@@ -48,31 +48,13 @@ function invalidLname($lname)
     return $result;
 }
 
-
-function get_form_info($conn, $usersID)
-{
-    $sql = "SELECT * FROM billing_info WHERE users_usersID = $usersID;";
-
-    $result = mysqli_query($conn, $sql);
-
-    $resultCheck = mysqli_num_rows($result);
-
-    if($resultCheck > 0)
-    {
-        $row = mysqli_fetch_assoc($result);
-        return $row;
-    }
-    
-    return false;
-}
-
-
-function add_contact_info($conn, $usersID, $fname, $lname, $message)
+function add_contact_info($conn, $fname, $lname, $message)
 {
 
-    $sql = "INSERT INTO contact_info (users_usersID, fname, lname, msg) VALUES ($usersID, '$fname', '$lname', NULL);";
+    $sql = "INSERT INTO contact_info (fname, lname, msg) VALUES ('$fname', '$lname', NULL);";
     $insert_result = mysqli_query($conn, $sql);
 
+    # get latest entry in contact_info-table
     $sql_contact_id = "SELECT * FROM contact_info ORDER BY contactID DESC LIMIT 1";
     $result = mysqli_query($conn, $sql_contact_id);
     $resultCheck = mysqli_num_rows($result);
@@ -80,8 +62,7 @@ function add_contact_info($conn, $usersID, $fname, $lname, $message)
     if($resultCheck > 0)
     {
         $row = mysqli_fetch_assoc($result);
-        $filepath = 'angry_letters/message-'.strval($row["contactID"]);
-        $filepath .= '.txt';
+        $filepath = 'angry_letters/message-'.strval($row["contactID"]).'.txt';
         $cID = $row["contactID"];
         $sql_query = "UPDATE contact_info SET msg = '$filepath' WHERE contactID = $cID";
         mysqli_query($conn, $sql_query);

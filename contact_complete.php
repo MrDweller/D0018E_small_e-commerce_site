@@ -10,16 +10,14 @@
         $fname = $_POST["firstname"];
         $lname = $_POST["lastname"];
 
-        if(isset($_SESSION["userid"]))
-        {
-            $userid = $_SESSION["userid"];
-            $filename = add_contact_info($conn, $userid, $fname, $lname, $message);
-            
-            $handle = fopen($filename, 'w');
+    
+        $filename = add_contact_info($conn, $fname, $lname, $message);
+        
+        $handle = fopen($filename, 'w');
 
-            fwrite($handle, $message);
-            fclose($handle);
-        }
+        fwrite($handle, $message);
+        fclose($handle);
+        
 ?>  
 
     <h1 class="center_div">ZANG KYO FOR YOUR OPINION, WE DONT CARE(ok we CARE)!</h1>
