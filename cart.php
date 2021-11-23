@@ -21,7 +21,7 @@
     }
 
     ?>
-        <a id="checkout" class="btn" href="checkoutform.php"> Checkout </a>
+        <button id="checkout" class="btn" onclick='button_press("checkoutform.php")'> Checkout </button>
         
     <?php
 

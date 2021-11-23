@@ -20,9 +20,9 @@
     <div class="dropdown">
         <button class="dropbtn">Sort By</button>
             <div class="dropdown-content">
-                <a href="products.php?order=PriceASC">Price (Ascending)</a>
-                <a href="products.php?order=PriceDESC">Price (Descending)</a>
-                <a href="products.php?order=Rating">Rating</a>
+                <button class=btn2 onclick='button_press_scroll("products.php?order=PriceASC")'>Price (Ascending)</button>
+                <button class=btn2 onclick='button_press_scroll("products.php?order=PriceDESC")'>Price (Descending)</button>
+                <button class=btn2 onclick='button_press_scroll("products.php?order=Rating")'>Rating</button>
             </div>
     </div>
     

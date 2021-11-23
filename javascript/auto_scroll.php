@@ -39,8 +39,6 @@ function set_scroll()
         {
             $scroll_y = $_SESSION['scroll_y'];
             ?>
-                document.write(<?php echo json_encode($scroll_y)?>);
-                document.write(<?php echo json_encode($_SESSION['link'])?>);
                 window.scrollTo(0, <?php echo json_encode($scroll_y)?>);
 
             <?php
