@@ -27,7 +27,7 @@
                     <h3>We are on</h3>
                     <ul>
                         <!-- add anchortags -->
-                        <li>Discord</li>
+                        <li><a href="https://discord.gg/3eSaF8aHYD" style="color: #ffff">Discord</li></a>
                         <li>Youtube</li>
                         <li>Instagram</li>
                     </ul>
