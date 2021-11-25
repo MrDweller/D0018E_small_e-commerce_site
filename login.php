@@ -8,7 +8,7 @@
 			<form action="include/login.inc.php" method="post">
 				<input type="text" name="uid" placeholder="Username/Email..."><br>
 				<input type="password" name="pwd" placeholder="Password..."><br>
-				<button class="btn" type="submit" name="submit"> Log in </button>
+				<button class="btn" type="submit" name="submit"> Submit </button>
 			</form>
 			<?php
                     if(isset($_GET["error"]))
