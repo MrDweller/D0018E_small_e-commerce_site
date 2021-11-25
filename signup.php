@@ -10,7 +10,7 @@
                 <input type="text" name="email" placeholder="Email..."><br>
                 <input type="password" name="pwd" placeholder="Password..."><br>
                 <input type="password" name="pwdrepeat" placeholder="Repeat password..."><br>
-                <button class="btn" type="submit" name="submit">Sign up</button>
+                <button class="btn" type="submit" name="submit">Submit</button>
 
                 <?php
                     if(isset($_GET["error"]))
