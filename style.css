@@ -19,6 +19,14 @@ body{
     transform: rotateY(180deg);
 }
 
+.adminbar{
+    display: grid;
+    grid-auto-flow: column;
+    grid-column-gap: 10%;
+    padding: 0% 10%;
+
+}
+
 .navbar{
     display: flex;
     align-items: center;

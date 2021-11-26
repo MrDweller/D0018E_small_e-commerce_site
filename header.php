@@ -30,6 +30,12 @@
                             if(isset($_SESSION["useruid"]))
                             {
                                 $uid = $_SESSION["useruid"];
+                                if(isset($_SESSION["admin"]))
+                                {
+                                    ?>
+                                        <li> <button onclick='button_press("admin.php")' class="btn"> ADMIN </button></li>
+                                    <?php
+                                }
                                 ?>
                                     <li> <button onclick='button_press("include/logout.inc.php")' class="btn"> Log out </button></li>
                                     <li> <button onclick='button_press("account.php")' class="btn">

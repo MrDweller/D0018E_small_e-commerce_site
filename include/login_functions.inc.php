@@ -154,6 +154,14 @@ function loginUser($conn, $username, $pwd)
 
         $_SESSION["userid"] = $uidExist["usersID"];
         $_SESSION["useruid"] = $uidExist["usersUID"];
+
+        require_once 'admin_functions.inc.php';
+        if(is_admin($conn, $uidExist["usersID"]))
+        {
+            $_SESSION["admin"] = true;
+        }
+
+
         header("location: ../index.php");
         exit();
     }
