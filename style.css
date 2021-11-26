@@ -31,6 +31,10 @@ nav{
 
 ul{
     list-style-type: none;
+    color: #fff;
+}
+
+#phonenr{
     color: black;
 }
 
