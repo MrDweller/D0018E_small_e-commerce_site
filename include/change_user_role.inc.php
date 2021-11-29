@@ -23,8 +23,7 @@
                 }
             }
 
-            header("location: ../user_settings.php");
-            exit();
+           
         }
     }
     else 
