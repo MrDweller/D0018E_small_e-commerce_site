@@ -196,12 +196,7 @@
         {
             reserve_product($conn, $productIDs[$i], $amount);
             commit_transaction($conn);
-            $int = 1000000000;
-            $i = 0;
-            while($i < $int)
-            {
-                $i ++;
-            }
+            
 
             if(checkout($conn, $usersID, $productIDs, $i + 1))
             {
