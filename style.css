@@ -354,6 +354,23 @@ p{
     width: 10%;
 }
 
+.settingsbtn{
+    display: inline-block;
+    background: #C49BBB;
+    color: #fff;
+    font-size: 18px;
+    padding: 12px 20px;
+    margin: 30px 20px;
+    transition: background 0.5s;
+    border: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+.settingsbtn:hover{
+    background-color: #C49BBBBB;
+}
+
 
 /* This is for the dropdown button */ 
 .dropbtn{
