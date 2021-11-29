@@ -65,7 +65,7 @@
 
     function demote_admin($conn, $usersID)
     {
-        $sql = "DELETE FROM admins WHERE admins.usersID = $usersID;";
+        $sql = "DELETE FROM admins WHERE usersID = $usersID;";
 
         if (mysqli_query($conn, $sql)) {
             echo "Record successfully deleted";
@@ -76,7 +76,7 @@
 
     function promote_to_admin($conn, $usersID)
     {
-        $sql = "INSERT INTO admins (admins.usersID) VALUES ($usersID);";
+        $sql = "INSERT INTO admins (usersID) VALUES ($usersID);";
 
         if (mysqli_query($conn, $sql)) {
             echo "Record successfully added";
@@ -87,7 +87,7 @@
 
     function delete_user($conn, $usersID)
     {
-        $sql = "DELETE FROM users WHERE users.usersID = $usersID;";
+        $sql = "DELETE FROM users WHERE usersID = $usersID;";
 
         if (mysqli_query($conn, $sql)) {
             echo "Record successfully deleted";
