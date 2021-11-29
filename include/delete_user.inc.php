@@ -13,7 +13,8 @@
             }
             delete_user($conn, $usersID);
 
-            
+            header("location: ../user_settings.php");
+            exit();
         }
     }
     else 
