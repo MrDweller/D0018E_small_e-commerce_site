@@ -96,3 +96,48 @@
         }
 
     }
+
+
+
+
+    // PRODUCTS
+    function get_all_products($conn)
+    {
+        $sql = "SELECT productID, productName, image, price, quantity FROM products";
+
+        $result = mysqli_query($conn, $sql);
+
+        $resultCheck = mysqli_num_rows($result);
+
+        $data = array();
+        if($resultCheck > 0)
+        {
+            $i = 0;
+            while($row = mysqli_fetch_array($result))
+            {
+                $row_data = array();
+
+                $row_data[0] = $row[0];
+                $row_data[1] = $row[1];
+                $row_data[2] = $row[2];
+                $row_data[3] = $row[3];
+                $row_data[4] = $row[4];
+
+                $data[$i] = $row_data;
+                $i++;
+            }
+        }
+        return $data;
+    }
+
+    function delete_product($conn, $productID)
+    {
+        $sql = "DELETE FROM products WHERE productID = $productID;";
+
+        if (mysqli_query($conn, $sql)) {
+            echo "Record successfully deleted";
+        } else {
+            echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+        }
+
+    }
