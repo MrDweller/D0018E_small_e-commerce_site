@@ -157,11 +157,24 @@
         }
     }
 
+    function delete_from_cart($conn, $usersID, $productID)
+    {
+        $sql = "DELETE FROM cart WHERE users_usersID = $usersID AND products_productID = $productID;";
+
+        if (mysqli_query($conn, $sql)) {
+            echo "Record deleted successfully\n";
+        } 
+        else 
+        {
+            echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+        }
+    }
+
     function empty_cart($conn, $usersID, $productIDs)
     {
         for($i = 0; $i < sizeof($productIDs); $i++)
         {
-            alter_cart_amount($conn, $usersID, $productIDs[$i], 0);
+            delete_from_cart($conn, $usersID, $productIDs[$i]);
         }
 
     }
@@ -173,17 +186,22 @@
             return true;
         }
 
+        require_once 'db.inc.php';
+        start_transaction($conn);
+        
         $amount = check_cart_entry($conn, $usersID, $productIDs[$i]);
         $result = compare_amount_with_stock($conn, $productIDs[$i], $amount);
-        echo $productIDs[$i];
-        echo "\n";
-        echo $amount;
-        echo "\n";
-        echo $result;
 
         if($result === true)
         {
             reserve_product($conn, $productIDs[$i], $amount);
+            commit_transaction($conn);
+            $int = 1000000000;
+            $i = 0;
+            while($i < $int)
+            {
+                $i ++;
+            }
 
             if(checkout($conn, $usersID, $productIDs, $i + 1))
             {
@@ -197,6 +215,7 @@
         }
         else
         {
+            commit_transaction($conn);
             return false;
         }
 
