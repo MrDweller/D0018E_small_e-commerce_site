@@ -182,8 +182,6 @@
         return $data;
     }
 
-
-
 function read_message($filepath_msg)
 {
     return file_get_contents(__DIR__ . "/" . $filepath_msg);

@@ -21,19 +21,17 @@
                     <tr>
                         <td class="user_column"><?php echo $message_array[$i][0] ?></td>
                         <td class="user_column"><?php echo $message_array[$i][1] ?></td>
-
+                        
                         <?php $string_msg = read_message($message_array[$i][2]); ?>
                         <td class="user_column"><?php echo $string_msg ?></td>
 
-
-
-
+                        <td><button class="btn" type="submit" name="submit">Show message</button></td>
+                        <td><button class="btn" type="submit" name="submit">Download message</button></td>
                     </tr>
         <?php
             }
         ?>
-
-
+        
 </table>
 
 <?php
