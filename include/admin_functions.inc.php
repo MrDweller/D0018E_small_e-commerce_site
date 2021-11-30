@@ -151,7 +151,40 @@
         } else {
             echo "Error: " . $sql . "<br>" . mysqli_error($conn);
         }
-
-        
-
     }
+
+
+    // CONTACT
+    function get_all_messages($conn)
+    {
+        $sql = "SELECT fname, lname, msg FROM contact_info";
+
+        $result = mysqli_query($conn, $sql);
+
+        $resultCheck = mysqli_num_rows($result);
+
+        $data = array();
+        if($resultCheck > 0)
+        {
+            $i = 0;
+            while($row = mysqli_fetch_array($result))
+            {
+                $row_data = array();
+
+                $row_data[0] = $row[0];
+                $row_data[1] = $row[1];
+                $row_data[2] = $row[2];
+
+                $data[$i] = $row_data;
+                $i++;
+            }
+        }
+        return $data;
+    }
+
+
+
+function read_message($filepath_msg)
+{
+    return file_get_contents(__DIR__ . "/" . $filepath_msg);
+}
