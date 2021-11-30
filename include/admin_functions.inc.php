@@ -1,5 +1,7 @@
 <?php
 
+
+    // USERS
     function get_all_users($conn)
     {
         $sql = "SELECT usersID, usersUID, usersEmail FROM users";
@@ -96,8 +98,6 @@
         }
 
     }
-
-
 
 
     // PRODUCTS

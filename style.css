@@ -108,6 +108,7 @@ p{
     
 }
 
+
 .center_div{
     display: block;
     margin-top: 5%;
@@ -186,18 +187,20 @@ p{
     background: #666;
 }
 
+
 .btn_product_settings_down{
     display: inline-block;
     background: #C49BBB;
     color: #fff;
     font-size: 18px;
     padding: 10px 20px;
-    margin-top: 50px;
+    margin-left: 30px;
     border-radius: 20px;
     transition: background 0.5s;
     border: 0;
     font-family: 'Poppins', sans-serif;
 }
+
 
 .btn_product_settings_down:hover{
     background: #666;
