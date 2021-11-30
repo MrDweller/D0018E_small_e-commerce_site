@@ -3,6 +3,14 @@
     require_once 'include/account.inc.php';
 ?>
     <div class="center_div">
+        <!-- Fix these functions for useraccounts -->
+        <h1>Edit account credentials</h1><br>
+        <button type="submit" class="btn">Inbox</button>
+        <button type="submit" class="btn">Change email</button>
+        <button type="submit" class="btn">Change password</button>
+        <button type="submit" class="btn">Delete your account</button>
+
+        <!-- Change shoppinghistory to store the history of products bought each session instead of each product -->
         <h1>Shopping history</h1><br>
         <?php
 
