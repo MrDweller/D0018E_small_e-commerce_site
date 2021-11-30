@@ -97,14 +97,28 @@
         }
     }
 
+    function add_product($conn, $product_name, $img, $product_price, $product_description, $product_quantity)
+    {
+        $sql = "INSERT INTO products (productName, image, price, description, rating, quantity) VALUES ('$product_name', '$img', $product_price, '$product_description', 3, $product_quantity);";
+
+        if(mysqli_query($conn, $sql))
+        {
+            echo 'Success';
+        }
+        else 
+        {
+            echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+        }
+    }
+
 
     //ADMIN ERROR FOR ADDNING 
 
-    function emptyInput_product($product_name, $product_price, $product_quantity, $img, $product_description)
+    function emptyInput_product($product_name, $product_price, $product_quantity, $img)
     {
         $result = null;
 
-        if(empty($product_name) || empty($product_price) || empty($product_quantity) || empty($img) || empty($product_description))
+        if(empty($product_name) || empty($product_price) || empty($product_quantity) || empty($img))
         {
             $result = true;
         }

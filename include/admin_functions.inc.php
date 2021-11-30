@@ -132,6 +132,18 @@
 
     function delete_product($conn, $productID)
     {
+        require_once 'product_functions.inc.php';
+        $product = get_product($conn, $productID);
+
+        if(unlink("../" . $product["image"]))
+        {
+            echo "Image successfully deleted";
+        }
+        else
+        {
+            echo "ERROR IMAGE NOT DELETED";
+        }
+
         $sql = "DELETE FROM products WHERE productID = $productID;";
 
         if (mysqli_query($conn, $sql)) {
@@ -139,5 +151,7 @@
         } else {
             echo "Error: " . $sql . "<br>" . mysqli_error($conn);
         }
+
+        
 
     }

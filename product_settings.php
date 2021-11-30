@@ -14,6 +14,31 @@
             <textarea name="product_description" id="product_description" placeholder="Product description..." ></textarea><br>
             <button class="btn" type="submit" name="submit">Add product</button>
         </form>
+        <?php
+                    if(isset($_GET["error"]))
+                    {
+                        if($_GET["error"] == "emptyInput")
+                        {
+                            echo "<p>Fill in all fields!</p>";
+                        }
+                        if($_GET["error"] == "invalidName")
+                        {
+                            echo "<p>Choose a proper product name!</p>";
+                        }
+                        if($_GET["error"] == "invalidPrice")
+                        {
+                            echo "<p>Not a valid price!</p>";
+                        }
+                        if($_GET["error"] == "invalidQuantity")
+                        {
+                            echo "<p>Not a valid quantity!</p>";
+                        }
+                        if($_GET["error"] == "imgUploadFailed")
+                        {
+                            echo "<p>Something went wrong with the image!</p>";
+                        }
+                    }
+                ?>
     </div>
     
     <table class="center">

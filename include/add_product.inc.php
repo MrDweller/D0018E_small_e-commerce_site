@@ -45,16 +45,47 @@
 
             // Allow certain file formats
             $image_file_type = strtolower(pathinfo($filepath, PATHINFO_EXTENSION));
-            if($image_file_type != "jpg" && $image_file_type != "png" && $image_file_type != "jpeg" && $image_file_type != "gif") 
+            if($image_file_type != "jpg" && $image_file_type != "png" && $image_file_type != "jpeg") 
             {
                 echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
                 $uploaded = false;
+            }
+
+
+            if(emptyInput_product($product_name, $product_price, $product_quantity, $file))
+            {
+                echo "empty\n";
+                header("location: ../product_settings.php?error=emptyInput");
+                exit(); 
+            }
+            
+            if(invalid_text($product_name))
+            {
+                echo "invalid name\n";
+                header("location: ../product_settings.php?error=invalidName");
+                exit(); 
+            }
+
+            if(invalid_num($product_price))
+            {
+                echo "invalid number\n";
+                header("location: ../product_settings.php?error=invalidPrice");
+                exit(); 
+            }
+
+            if(invalid_num($product_quantity))
+            {
+                echo "invalid quantity\n";
+                header("location: ../product_settings.php?error=invalidQuantity");
+                exit(); 
             }
 
             // Check if $uploaded is set to false by an error
             if ($uploaded == false) 
             {
                 echo "Sorry, your file was not uploaded.";
+                header("location: ../product_settings.php?error=imgUploadFailed");
+                exit(); 
             // if everything is ok, try to upload file
             } 
             else 
@@ -66,34 +97,15 @@
                 else 
                 {
                     echo "Sorry, there was an error uploading your file.";
+                    header("location: ../product_settings.php?error=imgUploadFailed");
+                    exit();
                 }
             }
 
-            if(emptyInput_product($product_name, $product_price, $product_quantity, $file, $product_description))
-            {
-                echo "empty\n";
-            }
+            add_product($conn, $product_name, "media/".$file, $product_price, $product_description, $product_quantity);
             
-            if(invalid_text($product_name))
-            {
-                echo "invalid name\n";
-            }
-
-            if(invalid_num($product_price))
-            {
-                echo "invalid number\n";
-            }
-
-            if(invalid_num($product_quantity))
-            {
-                echo "invalid quantity\n";
-            }
-            
-            if(invalid_text($product_description))
-            {
-                echo "invalid description\n";
-            }
-            
+            header("location: ../product_settings.php");
+            exit();
         }
     }
     else 
