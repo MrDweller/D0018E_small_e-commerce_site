@@ -13,6 +13,10 @@
             $product_price = $_POST["product_price"];
             $product_quantity = $_POST["product_quantity"];
             $img = $_POST["img"];
+            $target_dir = "../media/";
+            $filepath = $target_dir . $img;
+            
+            
             $product_description = $_POST["product_description"];
             
             if(emptyInput_product($product_name, $product_price, $product_quantity, $img, $product_description))
