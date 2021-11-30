@@ -213,7 +213,4 @@
             commit_transaction($conn);
             return false;
         }
-
-
-
     }
