@@ -97,3 +97,53 @@
         }
     }
 
+
+    //ADMIN ERROR FOR ADDNING 
+
+    function emptyInput_product($product_name, $product_price, $product_quantity, $img, $product_description)
+    {
+        $result = null;
+
+        if(empty($product_name) || empty($product_price) || empty($product_quantity) || empty($img) || empty($product_description))
+        {
+            $result = true;
+        }
+        else
+        {
+            $result = false;
+        }
+        return $result;
+    }
+
+    function invalid_text($text)
+    {
+        $result = null;
+
+        if(!preg_match("/^\pL+$/u", $text))
+        {
+            $result = true;
+        }
+        else
+        {
+            $result = false;
+        }
+
+        return $result;
+    }
+
+    function invalid_num($num)
+    {
+        $result = null;
+
+        if(!preg_match("/^[0-9]*$/", $num))
+        {
+            $result = true;
+        }
+        else
+        {
+            $result = false;
+        }
+
+        return $result;
+    }
+

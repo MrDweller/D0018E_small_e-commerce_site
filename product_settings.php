@@ -2,6 +2,20 @@
     require_once 'header.php';
     require_once 'admin_header.php';
 ?>
+    <div class="center_div">
+        <h1>
+            Add product
+        </h1>
+        <form action="include/add_product.inc.php" method="POST">
+            <input name="product_name" id="product_name" type="text" placeholder="Product name..." value="">
+            <input name="product_price" id="product_price" type="text" placeholder="Product price..." value="">
+            <input name="product_quantity" id="product_quantity" type="text" placeholder="Product quantity..." value="">
+            <input type="file" id="img" name="img" accept="image/*">
+            <textarea name="product_description" id="product_description" placeholder="Product description..." ></textarea><br>
+            <button class="btn" type="submit" name="submit">Add product</button>
+        </form>
+    </div>
+    
     <table class="center">
         <tr>
             <th style="padding-right: 20px;">Product name</th>
