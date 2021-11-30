@@ -14,13 +14,13 @@
             if(isset($_GET["minus"]))
             {
                 $amount = get_product_entry($conn, $productID);
-                alter_product_quantity($conn, $usersID, $productID, ($amount - 1));
+                alter_product_quantity($conn, $productID, ($amount - 1));
             }
 
             if(isset($_GET["plus"]))
             {
                 $amount = get_product_entry($conn, $productID);
-                alter_product_quantity($conn, $usersID, $productID, ($amount + 1));
+                alter_product_quantity($conn, $productID, ($amount + 1));
             }
             
             header("location: ../product_settings.php");

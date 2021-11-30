@@ -144,6 +144,16 @@ p{
     height: auto;
 }
 
+input{
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+}
+
+textarea{
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+}
+
 .btn3{
     display: inline-block;
     background: none;
