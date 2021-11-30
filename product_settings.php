@@ -6,7 +6,7 @@
         <h1>
             Add product
         </h1>
-        <form action="include/add_product.inc.php" method="POST">
+        <form action="include/add_product.inc.php" method="POST" enctype="multipart/form-data">
             <input name="product_name" id="product_name" type="text" placeholder="Product name..." value="">
             <input name="product_price" id="product_price" type="text" placeholder="Product price..." value="">
             <input name="product_quantity" id="product_quantity" type="text" placeholder="Product quantity..." value="">
