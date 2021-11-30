@@ -186,3 +186,22 @@ function read_message($filepath_msg)
 {
     return file_get_contents(__DIR__ . "/" . $filepath_msg);
 }
+
+function format_message($string, $line_length)
+{
+    $array = str_split($string);
+    $counter = 0;
+    $string_builder = "";
+    foreach ($array as $char) {
+        $counter++;
+        if($counter >= $line_length)
+        {
+            $string_builder = $string_builder . "<br>";
+            $counter = 0;
+        }
+
+        $string_builder = $string_builder . $char;
+       }
+    
+    return $string_builder;
+}

@@ -8,7 +8,7 @@
 <table class="center">
         <tr>
             <th style="padding-right: 20px;">First name</th>
-            <th style="padding-right: 150px;">Last name</th>
+            <th style="padding-right: 100px;">Last name</th>
             <th style="padding-left: 30px;">Inferior opinion</th>
         </tr>
 
@@ -22,8 +22,11 @@
                         <td class="user_column"><?php echo $message_array[$i][0] ?></td>
                         <td class="user_column"><?php echo $message_array[$i][1] ?></td>
                         
-                        <?php $string_msg = read_message($message_array[$i][2]); ?>
-                        <td class="user_column"><?php echo $string_msg ?></td>
+                        <?php
+                        $string_msg = read_message($message_array[$i][2]);
+                        $formatted_string = format_message($string_msg, 70);
+                        ?>
+                        <td class="user_column"><?php echo $formatted_string ?></td>
                     </tr>
         <?php
             }
