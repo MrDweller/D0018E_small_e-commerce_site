@@ -2,14 +2,14 @@
 
     require_once 'include/product_functions.inc.php';
 
-    // $display_type says what way to display, 1 = product page and 0 = cart page
+    // $display_type says what way to display, 1 = product page and 0 = cart page, 2 = product page
     function display_product($conn, $productID, $display_type) 
     {
         $row = get_product($conn, $productID);
 
         ?>
         <div class="col-<?php echo $display_type?>">
-                <button class="img_btn" onclick="button_press_scroll('include/add_to_cart.inc.php?product=<?php echo $productID;?>')"><img src=<?php echo $row['image']; ?>> </button> 
+                <button class="img_btn" onclick="button_press('product_page.php?product=<?php echo $productID;?>')"><img src=<?php echo $row['image']; ?>> </button> 
                 
                 <h3>
                     <?php
@@ -46,6 +46,13 @@
                 </p>
 
                 <?php
+                    if($display_type === 1 || $display_type === 2)
+                    {
+                        ?>
+                            <button class="btn" onclick="button_press_scroll('include/add_to_cart.inc.php?product=<?php echo $productID;?>')">Add to cart</button> 
+                        <?php
+                    }
+
                     if($display_type === 0)
                     {
                         
@@ -59,7 +66,7 @@
                             <button onclick="button_press_scroll('include/alter_cart.inc.php?prodID=<?php echo $productID; ?>&plus')" class="btn" >+</button>
                         <?php
                     }
-                    else if($display_type !== 1 && $display_type !== 0)
+                    else if($display_type !== 1 && $display_type !== 0 && $display_type !== 2)
                     {
                         echo 'ERROR: INVALID AMOUNT TYPE IN PRODUCT_FUNCTIONS!!!';
                     }

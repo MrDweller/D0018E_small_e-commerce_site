@@ -192,16 +192,31 @@ function format_message($string, $line_length)
     $array = str_split($string);
     $counter = 0;
     $string_builder = "";
-    foreach ($array as $char) {
+    $current_word = "";
+
+    foreach ($array as $char) 
+    {
         $counter++;
+
+        $current_word = $current_word . $char;
+
+        if(ctype_space($char))
+        {
+            $string_builder = $string_builder . $current_word;
+            $current_word = "";
+        }
+
         if($counter >= $line_length)
         {
             $string_builder = $string_builder . "<br>";
             $counter = 0;
         }
 
-        $string_builder = $string_builder . $char;
-       }
+    }
+    if(!empty($current_word))
+    {
+        $string_builder = $string_builder . $current_word;
+    }
     
     return $string_builder;
 }

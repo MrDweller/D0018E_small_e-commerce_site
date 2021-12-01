@@ -282,6 +282,25 @@ textarea{
     margin-right: auto;
 }
 
+.review_div{
+    margin-top: 5%;
+    margin-bottom: 5%;
+    margin-left: auto;
+    margin-right: auto;
+
+    text-align: center;
+}
+
+.review{
+    border: 1px solid black;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
 .col-0{
     flex-basis: 20%;
     padding: 10px;
@@ -316,6 +335,15 @@ textarea{
 
 .col-1:hover{
     transform: translateY(-20px)
+}
+
+.col-2 img{
+    height: 300px;
+    width: auto;
+}
+
+.col-2 p{
+    font-size: 20px;
 }
 
 .rating .fa{
