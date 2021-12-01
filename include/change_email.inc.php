@@ -13,7 +13,7 @@ if(isset($_SESSION["userid"]))
         $pwd = $_POST["pwd"];
 
         // ERROR HANDLING
-        if(verify_user($conn, $old_email, $pwd) === false)
+        if(verify_user($conn, 0, $old_email, $pwd) === false)
         {
             header("location: ../change_email.php?error=verifyError");
             exit();
@@ -25,7 +25,7 @@ if(isset($_SESSION["userid"]))
             exit();
         }
 
-        if(invalid_email_repeat($new_email_1, $new_email_2))
+        if(invalid_form_repeat($new_email_1, $new_email_2))
         {
             header("location: ../change_email.php?error=emailRepeatError");
             exit();

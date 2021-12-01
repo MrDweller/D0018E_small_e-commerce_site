@@ -15,29 +15,34 @@
 			</form>
 	
 
-	<?php
+		<?php
 
-		if(isset($_GET["error"]))
-		{
-			if($_GET["error"] == "verifyError")
+			if(isset($_GET["error"]))
 			{
-				echo "<p>Username or password incorrect!</p>";
+				if($_GET["error"] == "verifyError")
+				{
+					echo "<p>Username or password incorrect!</p>";
+				}
+				if($_GET["error"] == "emptyInput")
+				{
+					echo "<p>Fill in all the fields!</p>";
+				}
+				if($_GET["error"] == "emailTaken")
+				{
+					echo "<p>New email is already taken!</p>";
+				}
+				if($_GET["error"] == "emailRepeatError")
+				{
+					echo "<p>Repeated email does not match new email!</p>";
+				}
+				if($_GET["error"] == "stmtFailed")
+				{
+					echo "<p>bruuuh!</p>";
+				}
+				
 			}
-			if($_GET["error"] == "emptyInput")
-			{
-				echo "<p>Fill in all the fields!</p>";
-			}
-			if($_GET["error"] == "emailTaken")
-			{
-				echo "<p>New email is already taken!</p>";
-			}
-			if($_GET["error"] == "emailRepeatError")
-			{
-				echo "<p>Repeated email does not match new email!</p>";
-			}
-		}
 
-	?>
+		?>
 	
 	</section>
 

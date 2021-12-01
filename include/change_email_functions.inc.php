@@ -1,9 +1,9 @@
 <?php
 
-function verify_user($conn, $username, $pwd)
+function verify_user($conn, $username, $email, $pwd)
 {
     require_once 'login_functions.inc.php';
-    $uidExist = uidExist($conn, 0, $username);
+    $uidExist = uidExist($conn, $username, $email);
 
     if($uidExist === false)
     {
@@ -40,9 +40,19 @@ function empty_input_field($old_email, $new_email_1, $new_email_2, $pwd)
 
 function email_exists($conn, $new_email)
 {
-    $sql = "SELECT * FROM users WHERE usersEmail = '$new_email';";
-    $result = mysqli_query($conn, $sql);
+    $sql = "SELECT * FROM users WHERE usersEmail = ?;";
+    $stmt = mysqli_stmt_init($conn);
 
+    if(!mysqli_stmt_prepare($stmt, $sql))
+    {
+        header("location: ../change_email.php?error=stmtFailed");
+        exit();
+    }
+
+    mysqli_stmt_bind_param($stmt, "s", $new_email);
+
+    mysqli_stmt_execute($stmt);
+    $result = mysqli_stmt_get_result($stmt);
     $resultCheck = mysqli_num_rows($result);
     
     if($resultCheck > 0)
@@ -56,11 +66,11 @@ function email_exists($conn, $new_email)
 
 }
 
-function invalid_email_repeat($new_email_1, $new_email_2)
+function invalid_form_repeat($entry_1, $entry_2)
 {
     $result = null;
     
-    if($new_email_1 !== $new_email_2)
+    if($entry_1 !== $entry_2)
     {
         $result = true;
     }
@@ -75,8 +85,22 @@ function invalid_email_repeat($new_email_1, $new_email_2)
 function change_email($conn, $old_email, $new_email)
 {
 
-    $sql = "UPDATE users SET usersEmail = '$new_email' WHERE (usersEmail = '$old_email');";
-    if(mysqli_query($conn, $sql))
+    $sql = "UPDATE users SET usersEmail = ? WHERE (usersEmail = ?);";
+    $stmt = mysqli_stmt_init($conn);
+
+    if(!mysqli_stmt_prepare($stmt, $sql))
+    {
+        header("location: ../change_email.php?error=stmtFailed");
+        exit();
+    }
+
+    mysqli_stmt_bind_param($stmt, "ss", $new_email, $old_email);
+
+    mysqli_stmt_execute($stmt);
+
+    $resultData = mysqli_stmt_get_result($stmt);
+
+    if($resultData)
     {
         echo "Successfully updated record";
     }

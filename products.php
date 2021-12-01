@@ -50,7 +50,6 @@
 
 
     <h2 id="title"> Special alioffer </h2>
-    <!-- offer section FIIIXXX PROD ID-->
     <div class="row">
         <div class="col-2">
             <h1>Walk on down the Aliroad :)</h1>
