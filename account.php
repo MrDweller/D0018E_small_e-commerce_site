@@ -8,7 +8,14 @@
         <button type="submit" class="btn">Inbox</button>
         <button type="submit" class="btn">Change email</button>
         <button type="submit" class="btn">Change password</button>
-        <button type="submit" class="btn">Delete your account</button>
+        <!-- <button type="submit" class="btn">Delete your account</button> -->
+
+        <form action="include/delete_user.inc.php" method="post">
+            <input name="delete_myself" id="delete_myself" type="hidden" value="<?php echo $_SESSION["userid"] ?>">
+            <td>
+                <button type="submit" class="btn">Delete your account</button>
+            </td>
+        </form>
 
         <!-- Change shoppinghistory to store the history of products bought each session instead of each product -->
         <h1>Shopping history</h1><br>
