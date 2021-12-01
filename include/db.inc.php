@@ -2,7 +2,7 @@
 
 // db variables
 $serverName = "localhost";
-$dBUsername = "alibase";
+$dBUsername = "aliadmin";
 $dBPassword = "deesnuts";
 $dBName = "alibase";
 
