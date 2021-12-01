@@ -42,7 +42,7 @@
                             if(!$isAli)
                             {
                                 ?>
-                                    <form action="include/delete_user.inc.php" method="post">
+                                    <form action="include/delete_user.inc.php" method="post" onsubmit="return confirm('WARNI WARNI, this is permanent!')">
                                         <input name="delete_user" id="delete_user" type="hidden" value="<?php echo $user_array[$i][0] ?>">
                                         <td>
                                             <button type="submit" class="settingsbtn">DELETE</button>
@@ -60,8 +60,7 @@
                                                 </div>
                                         </td>
                                     </form>
-                                    
-                                    
+
                                 <?php
                             }
 
