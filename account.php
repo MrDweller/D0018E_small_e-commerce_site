@@ -24,7 +24,36 @@
             for($i = sizeof($shop_hist) - 1; $i >= 0; $i--)
             {
                 ?>        
-                    <p><?php echo $shop_hist[$i][0] ?> amount: <?php echo $shop_hist[$i][1] ?> date/time: <?php echo $shop_hist[$i][2] ?></p><br>
+                    <?php echo $shop_hist[$i][0] ?> amount: <?php echo $shop_hist[$i][1] ?> date/time: <?php echo $shop_hist[$i][2] ?>
+
+                    <?php
+                        if($reviews)
+                        {
+                            $no_review = true;
+                            for($j = 0; $j < sizeof($reviews); $j ++)
+                            {
+                                if($reviews[$j][0] == $shop_hist[$i][3])
+                                {
+                                    ?>
+                                        <button class="btn" onclick='button_press("user_review.php?productID=<?php echo $shop_hist[$i][3]?>")'>Edit review</button><br>
+                                    <?php
+                                    $no_review = false;
+                                }
+                            }
+                            if($no_review)
+                            {
+                                ?>
+                                    <button class="btn" onclick='button_press("user_review.php?productID=<?php echo $shop_hist[$i][3]?>")'>Add review</button><br>
+                                <?php
+                            }
+                        }
+                        else 
+                        {
+                            ?>
+                                <button class="btn" onclick='button_press("user_review.php?productID=<?php echo $shop_hist[$i][3]?>")'>Add review</button><br>
+                            <?php
+                        }
+                    ?>
                 <?php
             }
         
