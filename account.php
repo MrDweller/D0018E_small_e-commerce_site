@@ -10,7 +10,7 @@
         <button type="submit" class="btn">Change password</button>
         <!-- <button type="submit" class="btn">Delete your account</button> -->
 
-        <form action="include/delete_user.inc.php" method="post">
+        <form action="include/delete_user.inc.php" method="post" onsubmit="return confirm('WARNI WARNI, this is permanent!')">
             <input name="delete_myself" id="delete_myself" type="hidden" value="<?php echo $_SESSION["userid"] ?>">
             <td>
                 <button type="submit" class="btn">Delete your account</button>
