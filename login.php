@@ -30,7 +30,8 @@
                             echo "<p>FUCK YOU HACKER, STOP SQL INJECTION!</p>";
                         }
                     }
-                ?>
+            ?>
+            
 		</div>
 	</section>
 

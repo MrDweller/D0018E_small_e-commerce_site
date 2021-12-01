@@ -2,13 +2,12 @@
     include_once 'header.php';
     require_once 'include/account.inc.php';
 ?>
+
     <div class="center_div">
-        <!-- Fix these functions for useraccounts -->
         <h1>Edit account credentials</h1><br>
-        <button type="submit" class="btn">Inbox</button>
-        <button type="submit" class="btn">Change email</button>
-        <button type="submit" class="btn">Change password</button>
-        <!-- <button type="submit" class="btn">Delete your account</button> -->
+        <button onclick='button_press("inbox.php")' type="submit" class="btn">Inbox</button>
+        <button onclick='button_press("change_email.php")' type="submit" class="btn">Change email</button>
+        <button onclick='button_press("change_password.php")' type="submit" class="btn">Change password</button>
 
         <form action="include/delete_user.inc.php" method="post" onsubmit="return confirm('WARNI WARNI, this is permanent!')">
             <input name="delete_myself" id="delete_myself" type="hidden" value="<?php echo $_SESSION["userid"] ?>">
