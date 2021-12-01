@@ -17,7 +17,6 @@
             </td>
         </form>
 
-        <!-- Change shoppinghistory to store the history of products bought each session instead of each product -->
         <h1>Shopping history</h1><br>
         <?php
 
@@ -32,7 +31,7 @@
                             $no_review = true;
                             for($j = 0; $j < sizeof($reviews); $j ++)
                             {
-                                if($reviews[$j][0] == $shop_hist[$i][3])
+                                if($reviews[$j][0] === $shop_hist[$i][3])
                                 {
                                     ?>
                                         <button class="btn" onclick='button_press("user_review.php?productID=<?php echo $shop_hist[$i][3]?>")'>Edit review</button><br>

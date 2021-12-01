@@ -24,7 +24,7 @@
             {
                 if(edit_review($conn, $productID, $usersID, $review, $rating))
                 {
-                    echo "SUCCESS";
+                    echo "EDITED REVIEW SUCCESSFULLY";
                 }
                 else 
                 {
@@ -35,7 +35,7 @@
             {
                 if(add_review($conn, $productID, $usersID, $review, $rating))
                 {
-                    echo "SUCCESS";
+                    echo "SUCCESSFULLY MADE A NEW REVIEW";
                 }
                 else 
                 {

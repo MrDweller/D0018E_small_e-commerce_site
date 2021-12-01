@@ -38,20 +38,18 @@
         if($result_check > 0)
         {   
             $data = array();
-            $i = 0;
             $index = 0;
             while($row = mysqli_fetch_array($result))
             {
                 $row_data = array();
 
-                $row_data[$i] = $row[0];
-                $row_data[$i + 1] = $row[1];
-                $row_data[$i + 2] = $row[2];
+                $row_data[0] = $row[0];
+                $row_data[1] = $row[1];
+                $row_data[2] = $row[2];
 
                 $data[$index] = $row_data;
 
-                $i = $i + 3;
-                $index ++;
+                $index++;
             }
             return $data;
         }
@@ -63,15 +61,22 @@
 
     function review_exist($conn, $productID, $usersID)
     {
-        $sql = "SELECT * FROM reviews WHERE productID = $productID AND userID = $usersID;";
+        $sql = "SELECT review FROM reviews WHERE productID = $productID AND userID = $usersID;";
+        $result = mysqli_query($conn, $sql);
+        $rows = mysqli_num_rows($result);
 
-        if( (mysqli_query($conn, $sql)) === false )
+
+        if( $rows === 0 )
         {
             return false;
         }
-        else 
+        elseif( $rows > 0 )
         {
             return true;
+        }
+        else
+        {
+            echo mysqli_error($conn);
         }
     }
 
