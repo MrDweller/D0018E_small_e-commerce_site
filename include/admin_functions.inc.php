@@ -208,7 +208,7 @@ function format_message($string, $line_length)
 
         if($counter >= $line_length)
         {
-            $string_builder = $string_builder . "<br>";
+            $string_builder = $string_builder . "\n";
             $counter = 0;
         }
 
