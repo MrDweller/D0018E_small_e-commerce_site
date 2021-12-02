@@ -122,13 +122,9 @@
 
     function add_product($conn, $product_name, $img, $product_price, $product_description, $product_quantity)
     {
-<<<<<<< HEAD
-        //$sql = "INSERT INTO products (productName, image, price, description, rating, quantity) VALUES ('$product_name', '$img', $product_price, '$product_description', 3, $product_quantity);";
+    
         $sql = "INSERT INTO products (productName, image, price, description, rating, quantity) VALUES (?, ?, ?, ?, 3, ?);";
         $stmt = mysqli_stmt_init($conn);
-=======
-        $sql = "INSERT INTO products (productName, image, price, description, quantity) VALUES ('$product_name', '$img', $product_price, '$product_description', $product_quantity);";
->>>>>>> ccf027264bb515d1a975b091995a65cca546f87e
 
         if(!mysqli_stmt_prepare($stmt, $sql))
         {
