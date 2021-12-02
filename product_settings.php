@@ -37,6 +37,10 @@
                         {
                             echo "<p>Something went wrong with the image!</p>";
                         }
+                        if($_GET["error"] == "stmtFailed")
+                        {
+                            echo "<p>fuck maddurbloody!</p>";
+                        }
                     }
                 ?>
     </div>

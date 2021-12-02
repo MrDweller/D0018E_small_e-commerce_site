@@ -99,16 +99,20 @@
 
     function add_product($conn, $product_name, $img, $product_price, $product_description, $product_quantity)
     {
-        $sql = "INSERT INTO products (productName, image, price, description, rating, quantity) VALUES ('$product_name', '$img', $product_price, '$product_description', 3, $product_quantity);";
+        //$sql = "INSERT INTO products (productName, image, price, description, rating, quantity) VALUES ('$product_name', '$img', $product_price, '$product_description', 3, $product_quantity);";
+        $sql = "INSERT INTO products (productName, image, price, description, rating, quantity) VALUES (?, ?, ?, ?, 3, ?);";
+        $stmt = mysqli_stmt_init($conn);
 
-        if(mysqli_query($conn, $sql))
+        if(!mysqli_stmt_prepare($stmt, $sql))
         {
-            echo 'Success';
+            header("location: ../product_setting.php?error=stmtFailed");
+            exit();
         }
-        else 
-        {
-            echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-        }
+
+        mysqli_stmt_bind_param($stmt, "ssisi", $product_name, $img, $product_price, $product_description, $product_quantity);
+        mysqli_stmt_execute($stmt);
+        mysqli_stmt_close($stmt);
+
     }
 
 
