@@ -24,7 +24,8 @@
             {
                 if(edit_review($conn, $productID, $usersID, $review, $rating))
                 {
-                    echo "EDITED REVIEW SUCCESSFULLY";
+                    header("location: ../product_page.php?product=" . $productID);
+                    exit();
                 }
                 else 
                 {
@@ -35,7 +36,8 @@
             {
                 if(add_review($conn, $productID, $usersID, $review, $rating))
                 {
-                    echo "SUCCESSFULLY MADE A NEW REVIEW";
+                    header("location: ../product_page.php?product=" . $productID);
+                    exit();
                 }
                 else 
                 {

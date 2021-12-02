@@ -38,7 +38,7 @@ if(isset($_SESSION["userid"]))
         }
 
         change_email($conn, $old_email, $new_email_1);
-        header("location: ../account.php");
+        header("location: ../account.php?success=emailChanged");
         exit();
            
 

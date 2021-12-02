@@ -4,6 +4,24 @@
 ?>
 
     <div class="center_div">
+        <?php
+        if(isset($_GET['success']))
+        {
+            if($_GET['success'] === 'emailChanged')
+            {
+                ?>
+                    <h1 class="center_div">Email successfully changed! good job!</h1>
+                <?php
+            }
+            if($_GET['success'] === 'passwordChanged')
+            {
+                ?>
+                    <h1 class="center_div">Password successfully changed! Good boi!</h1>
+                <?php
+            }
+        }
+        ?>
+
         <h1>Edit account credentials</h1><br>
         <button onclick='button_press("inbox.php")' type="submit" class="btn">Inbox</button>
         <button onclick='button_press("change_email.php")' type="submit" class="btn">Change email</button>

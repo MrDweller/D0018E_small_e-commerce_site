@@ -34,7 +34,7 @@ if(isset($_SESSION["userid"]))
         }
 
         change_password($conn, $userUID, $new_pwd_1);
-        header("location: ../account.php");
+        header("location: ../account.php?success=passwordChanged");
         exit();
 
     }
