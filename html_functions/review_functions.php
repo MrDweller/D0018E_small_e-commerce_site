@@ -14,7 +14,7 @@
 
                     if($reviews === false)
                     {
-                        exit();
+                        return;
                     }
                     
                     for($i = 0; $i < sizeof($reviews); $i += 3)
