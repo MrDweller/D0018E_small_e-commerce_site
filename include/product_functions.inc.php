@@ -123,12 +123,12 @@
     function add_product($conn, $product_name, $img, $product_price, $product_description, $product_quantity)
     {
     
-        $sql = "INSERT INTO products (productName, image, price, description, rating, quantity) VALUES (?, ?, ?, ?, 3, ?);";
+        $sql = "INSERT INTO products (productName, image, price, description, quantity) VALUES (?, ?, ?, ?, ?);";
         $stmt = mysqli_stmt_init($conn);
 
         if(!mysqli_stmt_prepare($stmt, $sql))
         {
-            header("location: ../product_setting.php?error=stmtFailed");
+            header("location: ../product_settings.php?error=stmtFailed");
             exit();
         }
 

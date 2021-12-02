@@ -4,7 +4,6 @@
 
 ?>
 
-
 <table class="center">
         <tr>
             <th style="padding-right: 20px;">First name</th>
@@ -26,7 +25,11 @@
                         $string_msg = read_message($message_array[$i][2]);
                         $formatted_string = format_message($string_msg, 70);
                         ?>
-                        <td class="user_column"><?php echo ("<xmp>" . $formatted_string . "</xmp>"); ?></td>
+                        <td class="user_column" style="width: 500px;"> 
+                            <script>
+                                document.write( (<?php echo json_encode($formatted_string); ?>).replace(/<[^>]+>/g, '') );
+                            </script> 
+                        </td>
                     </tr>
         <?php
             }

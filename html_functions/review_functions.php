@@ -39,7 +39,11 @@
                                             }
                                         ?>
                                     </div>
-                                    <p><?php echo ("<xmp>" . format_message($reviews[$i + 1], 80) . "</xmp>");?></p><br>
+                                    <p>
+                                        <script>
+                                            document.write( (<?php echo json_encode($reviews[$i + 1]); ?>).replace(/<[^>]+>/g, '') );
+                                        </script> 
+                                    </p><br>
                                     
                             </div>
                         <?php
