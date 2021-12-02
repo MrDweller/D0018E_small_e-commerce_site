@@ -1,6 +1,7 @@
 <?php
 
     require_once 'include/product_functions.inc.php';
+    require_once 'include/admin_functions.inc.php';
 
     function display_reviews($conn, $productID)
     {
