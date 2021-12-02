@@ -82,7 +82,6 @@ function invalid_postcode($postcode)
 
 function add_to_billing_info($conn, $usersID, $fname, $lname, $city, $address, $postcode)
 {
-    //$sql = "INSERT INTO billing_info (users_usersID, fname, lname, city, address, postcode) VALUES ($usersID, '$fname', '$lname', '$city', '$address', $postcode);";
     $sql = "INSERT INTO billing_info (users_usersID, fname, lname, city, address, postcode) VALUES (?, ?, ?, ?, ?, ?);";
 
     $stmt = mysqli_stmt_init($conn);

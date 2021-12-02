@@ -108,32 +108,61 @@
 
     function edit_review($conn, $productID, $usersID, $review, $rating)
     {
-        $sql = "UPDATE reviews SET review = '$review', rating = $rating WHERE productID = $productID AND userID = $usersID;";
+        $sql = "UPDATE reviews SET review = ?, rating = ? WHERE productID = ? AND userID = ?;";
+        $stmt = mysqli_stmt_init($conn);
 
-        if(mysqli_query($conn, $sql))
+        if(!mysqli_stmt_prepare($stmt, $sql))
+        {
+            header("location: ../index.php?error=stmtFailed");
+            exit();
+        }
+
+        mysqli_stmt_bind_param($stmt, "siii", $review, $rating, $productID, $usersID);
+        mysqli_stmt_execute($stmt);
+     
+
+        if(mysqli_stmt_errno($stmt) === 0)
         {
             return true;
+            
         }
         else
         {
             echo mysqli_error($conn);
             return false;
         }
+
+        mysqli_stmt_close($stmt);
+        
     }
 
     function add_review($conn, $productID, $usersID, $review, $rating)
     {
-        $sql = "INSERT INTO reviews (productID,	userID,	review,	rating) VALUES ($productID, $usersID, '$review', $rating);";
+        $sql = "INSERT INTO reviews (productID,	userID,	review,	rating) VALUES (?, ?, ?, ?);";
+        $stmt = mysqli_stmt_init($conn);
 
-        if(mysqli_query($conn, $sql))
+        if(!mysqli_stmt_prepare($stmt, $sql))
+        {
+            header("location: ../index.php?error=stmtFailed");
+            exit();
+        }
+
+        mysqli_stmt_bind_param($stmt, "iisi", $productID, $usersID, $review, $rating);
+        mysqli_stmt_execute($stmt);
+     
+
+        if(mysqli_stmt_errno($stmt) === 0)
         {
             return true;
+            
         }
         else
         {
             echo mysqli_error($conn);
             return false;
         }
+
+        mysqli_stmt_close($stmt);
     }
 
     function get_average_rating($conn, $productID)
