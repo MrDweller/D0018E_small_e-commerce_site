@@ -2,7 +2,7 @@
 
     require_once 'include/product_functions.inc.php';
 
-    // $display_type says what way to display, 1 = product page and 0 = cart page, 2 = product page
+    // $display_type says what way to display, 1 = product page and 0 = cart page, 5 = product page
     function display_product($conn, $productID, $display_type) 
     {
         $row = get_product($conn, $productID);
@@ -52,7 +52,7 @@
                 </p>
 
                 <?php
-                    if($display_type === 1 || $display_type === 2)
+                    if($display_type === 1 || $display_type === 5)
                     {
                         ?>
                             <button class="btn" onclick="button_press_scroll('include/add_to_cart.inc.php?product=<?php echo $productID;?>')">Add to cart</button> 
@@ -72,7 +72,7 @@
                             <button onclick="button_press_scroll('include/alter_cart.inc.php?prodID=<?php echo $productID; ?>&plus')" class="btn" >+</button>
                         <?php
                     }
-                    else if($display_type !== 1 && $display_type !== 0 && $display_type !== 2)
+                    else if($display_type !== 1 && $display_type !== 0 && $display_type !== 5)
                     {
                         echo 'ERROR: INVALID AMOUNT TYPE IN PRODUCT_FUNCTIONS!!!';
                     }

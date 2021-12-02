@@ -10,7 +10,7 @@
         ?>
             <div class="center_div">
                 <?php
-                    display_product($conn, $productID, 2);
+                    display_product($conn, $productID, 5);
                 ?>
             </div>
         <?php
