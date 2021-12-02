@@ -25,12 +25,18 @@
 
                 <div class="rating">
                     <?php
-                        for($i = 0; $i < $row['rating']; $i++)
+                        require_once 'include/review_functions.inc.php';
+                        $average_rating = get_average_rating($conn, $productID);
+                        if($average_rating)
                         {
-                            ?>
-                            <i class="fa fa-smile-o"></i>
-                            <?php
+                            for($i = 0; $i < $average_rating; $i++)
+                            {
+                                ?>
+                                <i class="fa fa-smile-o"></i>
+                                <?php
+                            }
                         }
+                        
                     ?>
                 </div>
                 <p>

@@ -19,14 +19,14 @@
 
     <!-- TOP products -->
     <?php
-        $productIDs = get_featured_products($conn, 'rating');
+        $productIDs = get_featured_products($conn, 0);
         display_products_productIDs($conn, $productIDs, 'Top Products', 1);
     ?>
 
     
     <!-- features products -->
     <?php
-        $productIDs = get_featured_products($conn, 'quantity');
+        $productIDs = get_featured_products($conn, 1);
         display_products_productIDs($conn, $productIDs, 'Featured Products', 1);
     ?>
     
