@@ -14,6 +14,9 @@
 
                     if($reviews === false)
                     {
+                        ?>
+                            <p>No reviews!</p><br>
+                        <?php
                         return;
                     }
                     
