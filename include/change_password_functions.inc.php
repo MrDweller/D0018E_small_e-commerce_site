@@ -17,6 +17,7 @@ function change_password($conn, $userUID, $new_pwd_1)
     mysqli_stmt_bind_param($stmt, "ss", $hashedPWD, $userUID);
     
     $resultData = mysqli_stmt_execute($stmt);
+    mysqli_stmt_close($stmt);
 
     if($resultData)
     {

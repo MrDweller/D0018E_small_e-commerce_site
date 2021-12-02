@@ -54,6 +54,7 @@ function email_exists($conn, $new_email)
     mysqli_stmt_execute($stmt);
     $result = mysqli_stmt_get_result($stmt);
     $resultCheck = mysqli_num_rows($result);
+    mysqli_stmt_close($stmt);
     
     if($resultCheck > 0)
     {
@@ -97,8 +98,8 @@ function change_email($conn, $old_email, $new_email)
     mysqli_stmt_bind_param($stmt, "ss", $new_email, $old_email);
 
     mysqli_stmt_execute($stmt);
-
     $resultData = mysqli_stmt_get_result($stmt);
+    mysqli_stmt_close($stmt);
 
     if($resultData)
     {

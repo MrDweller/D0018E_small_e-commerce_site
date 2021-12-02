@@ -26,7 +26,7 @@
                         $string_msg = read_message($message_array[$i][2]);
                         $formatted_string = format_message($string_msg, 70);
                         ?>
-                        <td class="user_column"><?php echo $formatted_string ?></td>
+                        <td class="user_column"><?php echo ("<xmp>" . $formatted_string . "</xmp>"); ?></td>
                     </tr>
         <?php
             }

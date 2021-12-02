@@ -74,6 +74,11 @@
                         {
                             echo "<p>Choose a proper postcode!</p>";
                         }
+                        if($_GET["error"] == "stmtFailed")
+                        {
+                            echo "<p>Maddarbich!</p>";
+                        }
+
                     }
                 ?>
             </form>

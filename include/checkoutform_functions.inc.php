@@ -82,24 +82,50 @@ function invalid_postcode($postcode)
 
 function add_to_billing_info($conn, $usersID, $fname, $lname, $city, $address, $postcode)
 {
-    $sql = "INSERT INTO billing_info (users_usersID, fname, lname, city, address, postcode) VALUES ($usersID, '$fname', '$lname', '$city', '$address', $postcode);";
-        
-    if (mysqli_query($conn, $sql)) {
+    //$sql = "INSERT INTO billing_info (users_usersID, fname, lname, city, address, postcode) VALUES ($usersID, '$fname', '$lname', '$city', '$address', $postcode);";
+    $sql = "INSERT INTO billing_info (users_usersID, fname, lname, city, address, postcode) VALUES (?, ?, ?, ?, ?, ?);";
+
+    $stmt = mysqli_stmt_init($conn);
+
+    if(!mysqli_stmt_prepare($stmt, $sql))
+    {
+        header("location: ../checkoutform.php?error=stmtFailed");
+        exit();
+    }
+
+    mysqli_stmt_bind_param($stmt, "issssi", $usersID, $fname, $lname, $city, $address, $postcode);
+    mysqli_stmt_execute($stmt);
+    $resultData = mysqli_stmt_get_result($stmt);
+    mysqli_stmt_close($stmt);
+
+    if ($resultData) {
         echo "New record created successfully";
     } 
     else 
     {
         echo "Error: " . $sql . "<br>" . mysqli_error($conn);
     }
+    
 }
 
 function check_billing_info_exists($conn, $usersID)
 {
-    $sql = "SELECT * FROM billing_info WHERE users_usersID = $usersID;";
+    $sql = "SELECT * FROM billing_info WHERE users_usersID = ?;";
 
-    $result = mysqli_query($conn, $sql);
+    $stmt = mysqli_stmt_init($conn);
 
-    $resultCheck = mysqli_num_rows($result);
+    if(!mysqli_stmt_prepare($stmt, $sql))
+    {
+        header("location: ../checkoutform.php?error=stmtFailed");
+        exit();
+    }
+
+    mysqli_stmt_bind_param($stmt, "i", $usersID);
+    mysqli_stmt_execute($stmt);
+    $resultData = mysqli_stmt_get_result($stmt);
+
+    $resultCheck = mysqli_num_rows($resultData);
+    mysqli_stmt_close($stmt);
 
     if ($resultCheck > 0)
     {
@@ -114,29 +140,53 @@ function check_billing_info_exists($conn, $usersID)
 
 function update_billing_info($conn, $usersID, $fname, $lname, $city, $address, $postcode)
 {
-    $sql = "UPDATE billing_info SET fname = '$fname', lname = '$lname', city = '$city', address = '$address', postcode = $postcode WHERE users_usersID = $usersID;";
+    $sql = "UPDATE billing_info SET fname = ?, lname = ?, city = ?, address = ?, postcode = ? WHERE users_usersID = ?;";
         
-    if (mysqli_query($conn, $sql)) 
+    $stmt = mysqli_stmt_init($conn);
+
+    if(!mysqli_stmt_prepare($stmt, $sql))
     {
-        echo "Rrecord updated successfully";
+        header("location: ../checkoutform.php?error=stmtFailed");
+        exit();
+    }
+
+    mysqli_stmt_bind_param($stmt, "ssssii", $fname, $lname, $city, $address, $postcode, $usersID);
+    mysqli_stmt_execute($stmt);
+    $resultData = mysqli_stmt_get_result($stmt);
+    mysqli_stmt_close($stmt);
+
+    if ($resultData) {
+        echo "New record updated successfully";
     } 
     else 
     {
         echo "Error: " . $sql . "<br>" . mysqli_error($conn);
     }
+    
 }
 
 function get_billing_info($conn, $usersID)
 {
-    $sql = "SELECT * FROM billing_info WHERE users_usersID = $usersID;";
+    $sql = "SELECT * FROM billing_info WHERE users_usersID = ?;";
 
-    $result = mysqli_query($conn, $sql);
+    $stmt = mysqli_stmt_init($conn);
 
-    $resultCheck = mysqli_num_rows($result);
-
-    if($resultCheck > 0)
+    if(!mysqli_stmt_prepare($stmt, $sql))
     {
-        $row = mysqli_fetch_assoc($result);
+        header("location: ../checkoutform.php?error=stmtFailed");
+        exit();
+    }
+
+    mysqli_stmt_bind_param($stmt, "i", $usersID);
+    mysqli_stmt_execute($stmt);
+    $resultData = mysqli_stmt_get_result($stmt);
+
+    $resultCheck = mysqli_num_rows($resultData);
+    mysqli_stmt_close($stmt);
+
+    if ($resultCheck > 0)
+    {
+        $row = mysqli_fetch_assoc($resultData);
         return $row;
     }
     

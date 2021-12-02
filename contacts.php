@@ -71,6 +71,10 @@
                         {
                             echo "<p> Not a valid last name </p>";
                         }
+                        if($_GET["error"] == "stmtFailed")
+                        {
+                            echo "<p> Maddarbich! </p>";
+                        }
         
                     }
 

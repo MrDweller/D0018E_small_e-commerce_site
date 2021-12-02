@@ -38,7 +38,7 @@
                                             }
                                         ?>
                                     </div>
-                                    <p><?php echo $reviews[$i + 1]?></p><br>
+                                    <p><?php echo ("<xmp>" . $reviews[$i + 1] . "</xmp>");?></p><br>
                                     
                             </div>
                         <?php

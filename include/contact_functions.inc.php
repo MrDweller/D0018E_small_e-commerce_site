@@ -35,8 +35,27 @@ function invalidName($name)
 function add_contact_info($conn, $fname, $lname, $message)
 {
 
-    $sql = "INSERT INTO contact_info (fname, lname, msg) VALUES ('$fname', '$lname', NULL);";
-    $insert_result = mysqli_query($conn, $sql);
+    $sql = "INSERT INTO contact_info (fname, lname, msg) VALUES (?, ?, NULL);";
+    $stmt = mysqli_stmt_init($conn);
+
+    if(!mysqli_stmt_prepare($stmt, $sql))
+    {
+        header("location: ../contacts.php?error=stmtFailed");
+        exit();
+    }
+
+    mysqli_stmt_bind_param($stmt, "ss", $fname, $lname);
+    if(mysqli_stmt_execute($stmt))
+    {
+        echo "Insert contact row success<br>";
+    }
+    else
+    {
+        echo "Insert contact row FAILED";
+    }
+
+    $insert_result = mysqli_stmt_get_result($stmt);
+    mysqli_stmt_close($stmt);
 
     # get latest entry in contact_info-table
     $sql_contact_id = "SELECT * FROM contact_info ORDER BY contactID DESC LIMIT 1";
@@ -53,15 +72,7 @@ function add_contact_info($conn, $fname, $lname, $message)
     }
 
 
-    if ($insert_result) 
-    {
-        return $filepath;
-    } 
-    else 
-    {
-        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-        return false;
-    }
+    return $filepath;
 
 }
 
