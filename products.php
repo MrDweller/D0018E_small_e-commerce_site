@@ -5,7 +5,7 @@
     require_once 'html_functions/product_functions.php';
 
     $ORDER_NONE = '';
-    $ORDER_RATING = 'ORDER BY rating DESC';
+    $ORDER_RATING = 'rating';
     $ORDER_PRICE_ASC = 'ORDER BY price ASC';
     $ORDER_PRICE_DESC = 'ORDER BY price DESC';
     
@@ -13,7 +13,7 @@
 
     <!-- Top products -->
     <?php
-        $productIDs = get_featured_products($conn, 'rating');
+        $productIDs = get_featured_products($conn, 0);
         display_products_productIDs($conn, $productIDs, 'Top Products', 1);
     ?>
 
