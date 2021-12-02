@@ -1,6 +1,7 @@
 <?php
 
     require_once 'include/product_functions.inc.php';
+    require_once 'include/admin_functions.inc.php';
 
     function display_reviews($conn, $productID)
     {
@@ -38,7 +39,7 @@
                                             }
                                         ?>
                                     </div>
-                                    <p><?php echo ("<xmp>" . $reviews[$i + 1] . "</xmp>");?></p><br>
+                                    <p><?php echo ("<xmp>" . format_message($reviews[$i + 1], 80) . "</xmp>");?></p><br>
                                     
                             </div>
                         <?php
