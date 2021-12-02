@@ -23,9 +23,8 @@
         ?>
 
         <h1>Edit account credentials</h1><br>
-        <button onclick='button_press("inbox.php")' type="submit" class="btn">Inbox</button>
-        <button onclick='button_press("change_email.php")' type="submit" class="btn">Change email</button>
-        <button onclick='button_press("change_password.php")' type="submit" class="btn">Change password</button>
+        <a href = "change_email.php" type="submit" class="btn">Change email</a>
+        <a href = "change_password.php" type="submit" class="btn">Change password</a>
 
         <form action="include/delete_user.inc.php" method="post" onsubmit="return confirm('WARNI WARNI, this is permanent!')">
             <input name="delete_myself" id="delete_myself" type="hidden" value="<?php echo $_SESSION["userid"] ?>">
@@ -51,7 +50,7 @@
                                 if($reviews[$j][0] === $shop_hist[$i][3])
                                 {
                                     ?>
-                                        <button class="btn" onclick='button_press("user_review.php?productID=<?php echo $shop_hist[$i][3]?>")'>Edit review</button><br>
+                                        <a class="btn" href = "user_review.php?productID=<?php echo $shop_hist[$i][3]?>" >Edit review</a><br>
                                     <?php
                                     $no_review = false;
                                 }
@@ -59,14 +58,14 @@
                             if($no_review)
                             {
                                 ?>
-                                    <button class="btn" onclick='button_press("user_review.php?productID=<?php echo $shop_hist[$i][3]?>")'>Add review</button><br>
+                                    <a class="btn" href = "user_review.php?productID=<?php echo $shop_hist[$i][3]?>" >Add review</a><br>
                                 <?php
                             }
                         }
                         else 
                         {
                             ?>
-                                <button class="btn" onclick='button_press("user_review.php?productID=<?php echo $shop_hist[$i][3]?>")'>Add review</button><br>
+                                <a class="btn" href = "user_review.php?productID=<?php echo $shop_hist[$i][3]?>">Add review</a><br>
                             <?php
                         }
                     ?>

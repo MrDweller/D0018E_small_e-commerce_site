@@ -184,7 +184,7 @@
 
     function sort_productIDs_by_rating($conn, $productIDs)
     {
-        // implementation of buket sort.
+        // implementation of bucket sort.
         $rating_one = array();
         $index_one = 0;
         $rating_two = array();

@@ -32,7 +32,7 @@
                 alter_cart_amount($conn, $usersID, $productID, $amount + 1);
             }
 
-            header("location: ../products.php");
+            header("location: ".$_SERVER['HTTP_REFERER']);
             exit();
         }
         else 

@@ -17,7 +17,6 @@
     
 </head>
 <body>
-
     <div class="header">
         <div class="container">
             <div class="navbar">
@@ -33,21 +32,21 @@
                                 if(isset($_SESSION["admin"]))
                                 {
                                     ?>
-                                        <li> <button onclick='button_press("admin.php")' class="btn"> ADMIN </button></li>
+                                        <li> <a href = "admin.php" class="btn"> ADMIN </a></li>
                                     <?php
                                 }
                                 ?>
-                                    <li> <button onclick='button_press("include/logout.inc.php")' class="btn"> Log out </button></li>
-                                    <li> <button onclick='button_press("account.php")' class="btn">
+                                    <li> <a href = "include/logout.inc.php" class="btn"> Log out </a></li>
+                                    <li> <a href = "account.php" class="btn">
                                 <?php echo $uid; ?>
-                                    </button></li>
+                                    </a></li>
                                 <?php
                             }
                             else 
                             {
                                 ?>
-                                <li> <button onclick='button_press("login.php")' class="btn"> Login </button></li>
-                                <li> <button onclick='button_press("signup.php")' class="btn"> Sign up </button></li>
+                                <li> <a href = "login.php" class="btn"> Login </a></li>
+                                <li> <a href = "signup.php" class="btn"> Sign up </a></li>
                                 <?php
                             }
                         ?>
@@ -67,20 +66,20 @@
                                 $cartCount = get_amount_in_cart($conn, $usersID);
 
                                 ?>
-                                <li><button onclick="button_press('cart.php')" class="btn" > <i class="fa fa-shopping-cart" style="font-size:25px"></i> 
+                                <li><a href = 'cart.php' class="btn" > <i class="fa fa-shopping-cart" style="font-size:25px"></i> 
                                 <?php
                                     echo $cartCount;
                                 ?>
-                                </button>
+                                </a>
                                 </li>
                                 <?php
                             }
                         ?>
                         
-                        <li><button class=btn3 onclick="button_press('index.php')"> Home </button></li>
-                        <li><button class=btn3 onclick="button_press('products.php')"> Products </button></li>
-                        <li><button class=btn3 onclick="button_press('about.php')"> About </a></li>
-                        <li><button class=btn3 onclick="button_press('contacts.php')"> Contact Us </a></li>
+                        <li><a class=btn3 href = 'index.php'> Home </a></li>
+                        <li><a class=btn3 href = 'products.php'> Products </a></li>
+                        <li><a class=btn3 href = 'about.php'> About </a></li>
+                        <li><a class=btn3 href = 'contacts.php'> Contact Us </a></li>
                                 
                     </ul> 
                 </nav>

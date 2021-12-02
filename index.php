@@ -8,7 +8,7 @@
         <div class="col-2">
             <h1>WELCOME TO ALIROAD!</h1>
             <p>Enjoy our varied selection of the finest wares of all the different roads there is, we are Aliroad! </p>
-            <button onclick="button_press('products.php')" class="btn"> Lets go! &#8594; </a>
+            <a href = 'products.php' class="btn"> Lets go! &#8594; </a>
         </div>
         <div class="col-2">
             <img src="media/aliware_logo.png">
@@ -22,14 +22,12 @@
         $productIDs = get_featured_products($conn, 0);
         display_products_productIDs($conn, $productIDs, 'Top Products', 1);
     ?>
-
     
     <!-- features products -->
     <?php
         $productIDs = get_featured_products($conn, 1);
         display_products_productIDs($conn, $productIDs, 'Featured Products', 1);
     ?>
-    
 
     <!-- footer -->
     <?php

@@ -9,7 +9,7 @@
 
         ?>
         <div class="col-<?php echo $display_type?>">
-                <button class="img_btn" onclick="button_press('product_page.php?product=<?php echo $productID;?>')"><img src=<?php echo $row['image']; ?>> </button> 
+                <a class="img_btn" href = 'product_page.php?product=<?php echo $productID;?>'><img src=<?php echo $row['image']; ?>> </a> 
                 
                 <h3>
                     <?php

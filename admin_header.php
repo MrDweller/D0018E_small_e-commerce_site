@@ -6,9 +6,9 @@
                 <h1>WELCOME <?php echo $_SESSION["useruid"]; ?> ADMIN!</h1>
                 
                 <div class="adminbar">
-                    <button onclick='button_press("user_settings.php")' class="btn"> Users settings </button>
-                    <button onclick='button_press("product_settings.php")' class="btn"> Product settings </button>
-                    <button onclick='button_press("user_feedback.php")' class="btn"> User feedback </button>
+                    <a href = "user_settings.php" class="btn"> Users settings </a>
+                    <a href = "product_settings.php" class="btn"> Product settings </a>
+                    <a href = "user_feedback.php" class="btn"> User feedback </a>
                 </div>
             
             </div>
