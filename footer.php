@@ -52,7 +52,7 @@ require_once 'javascript/cookies.php'
     cookie_alert = getCookie("cookie_alert");
     if(cookie_alert == 0)
     {
-        alert("On allroad we use cookies.\nOur cookies is for functionality only!");
+        alert("On aliroad we use cookies.\nOur cookies is for functionality only!");
         set_cookie("cookie_alert", 1);
     }
 </script>
