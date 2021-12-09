@@ -11,7 +11,7 @@
 				<input type="new_email_1" name="new_email_1" placeholder="New email..."><br>
 				<input type="new_email_2" name="new_email_2" placeholder="Repeat new email..."><br>
 				<input type="password" name="pwd" placeholder="Current password..."><br>
-				<button class="btn" type="submit" name="submit"> Change email </button>
+				<button class="btn" type="submit" name="submit"> Submit changes </button>
 			</form>
 	
 

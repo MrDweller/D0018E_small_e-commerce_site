@@ -9,7 +9,7 @@
 				<input type="password" name="old_pwd" placeholder="Current password..."><br>
                 <input type="password" name="new_pwd_1" placeholder="New password..."><br>
 				<input type="password" name="new_pwd_2" placeholder="Repeat new password..."><br>
-				<button class="btn" type="submit" name="submit"> Change password </button>
+				<button class="btn" type="submit" name="submit"> Submit changes </button>
 			</form>
 
 		<?php
