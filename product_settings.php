@@ -71,7 +71,7 @@
                         <td> <button onclick="button_press_scroll('include/alter_quantity.inc.php?prodID=<?php echo $product_array[$i][0]; ?>&plus')" class="btn_product_settings_down">+</button></td>
                     
                         
-                        <form action="include/delete_product.inc.php" method="post">
+                        <form action="include/delete_product.inc.php" method="post" onsubmit="return confirm('WARNI WARNI, this is permanent!')">
                             <input name="delete_product" id="delete_product" type="hidden" value="<?php echo $product_array[$i][0] ?>">
                             <td>
                                 <button type="submit" class="settingsbtn">DELETE</button>
