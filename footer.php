@@ -43,3 +43,16 @@
 <script>
     set_scroll();
 </script>
+
+<?php
+# Cookie alert
+require_once 'javascript/cookies.php'
+?>
+<script>
+    cookie_alert = getCookie("cookie_alert");
+    if(cookie_alert == 0)
+    {
+        alert("On allroad we use cookies.\nOur cookies is for functionality only!");
+        set_cookie("cookie_alert", 1);
+    }
+</script>

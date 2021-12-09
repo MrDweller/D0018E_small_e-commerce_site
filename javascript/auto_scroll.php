@@ -1,50 +1,31 @@
+<?php
+    require_once 'cookies.php';
+?>
+
 <script>
-    function set_cookie(scrollY)
+    function save_scroll()
     {
-        document.cookie = "scrollY=" + scrollY;
+        var scroll_y = document.body.scrollTop;
+        set_cookie("scrollY", scroll_y);
+        
     }
 
-    function getCookie(cname) 
+    function set_scroll()
     {
-        let name = cname + "=";
-        let decodedCookie = decodeURIComponent(document.cookie);
-        let ca = decodedCookie.split(';');
-        for(let i = 0; i <ca.length; i++) {
-            let c = ca[i];
-            while (c.charAt(0) == ' ') {
-            c = c.substring(1);
-            }
-            if (c.indexOf(name) == 0) {
-            return parseFloat(c.substring(name.length, c.length));
-            }
-        }
-        return 0;
+        var scrollY = getCookie("scrollY");
+        window.scrollTo(0, scrollY);
+        set_cookie("scrollY", 0);
     }
 
-function save_scroll()
-{
-    var scroll_y = document.body.scrollTop;
-    set_cookie(scroll_y);
-    
-}
+    function button_press_scroll(link)
+    {
+        save_scroll();
 
-function set_scroll()
-{
-    var scrollY = getCookie("scrollY");
-    window.scrollTo(0, scrollY);
-    set_cookie(0);
-}
+        window.location.href = link;
+    }
 
-function button_press_scroll(link)
-{
-    save_scroll();
-
-    window.location.href = link;
-}
-
-function button_press(link)
-{
-    window.location.href = link;
-}
-
+    function button_press(link)
+    {
+        window.location.href = link;
+    }
 </script>
