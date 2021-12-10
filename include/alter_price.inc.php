@@ -11,17 +11,9 @@
         {
             $productID = $_GET["prodID"];
 
-            if(isset($_GET["minus"]))
-            {
-                $price = get_product($conn, $productID)['price'];
-                alter_product_price($conn, $productID, ($price - 1));
-            }
+            $new_price = $_POST["new_price"];
+            alter_product_price($conn, $productID, $new_price);
 
-            if(isset($_GET["plus"]))
-            {
-                $price = get_product($conn, $productID)['price'];
-                alter_product_price($conn, $productID, ($price + 1));
-            }
             
             header("location: ../product_settings.php");
             exit();
