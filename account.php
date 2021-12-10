@@ -39,7 +39,7 @@
             for($i = sizeof($shop_hist) - 1; $i >= 0; $i--)
             {
                 ?>        
-                    <?php echo $shop_hist[$i][0] ?> amount: <?php echo $shop_hist[$i][1] ?> date/time: <?php echo $shop_hist[$i][2] ?>
+                    <?php echo $shop_hist[$i][0] ?> - Unit price:  <?php echo $shop_hist[$i][4] ?> - Amount: <?php echo $shop_hist[$i][1] ?> - Date/Time: <?php echo $shop_hist[$i][2] ?>
 
                     <?php
                         if($reviews)

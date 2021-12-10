@@ -5,9 +5,12 @@
     {
         for($i = 0; $i < sizeof($productIDs); $i++)
         {
+            require_once 'product_functions.inc.php';
+            $unit_price = get_product($conn, $productIDs[$i])['price'];
+
             $amount = check_cart_entry($conn, $usersID, $productIDs[$i]);
             $date = date("Y-m-d H:i:s");
-            $sql = "INSERT INTO shopping_history (users_usersID, products_productsID, amount, date_time) VALUES ($usersID, $productIDs[$i], $amount, '$date');";
+            $sql = "INSERT INTO shopping_history (users_usersID, products_productsID, amount, date_time, unit_price) VALUES ($usersID, $productIDs[$i], $amount, '$date', $unit_price);";
         
             if (mysqli_query($conn, $sql)) {
                 echo "New record created successfully";
@@ -20,7 +23,7 @@
 
     function get_shop_history($conn, $usersID)
     {
-        $sql = "SELECT products_productsID, amount, date_time FROM shopping_history WHERE users_usersID = $usersID;";
+        $sql = "SELECT products_productsID, amount, date_time, unit_price FROM shopping_history WHERE users_usersID = $usersID;";
 
         $result = mysqli_query($conn, $sql);
 
@@ -35,7 +38,8 @@
                 $data[$i] = $row[0];
                 $data[$i + 1] = $row[1];
                 $data[$i + 2] = $row[2];
-                $i+=3;
+                $data[$i + 3] = $row[3];
+                $i+=4;
             }
             
         } 

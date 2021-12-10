@@ -62,7 +62,10 @@
                     <tr>
                         <td class="user_column"><?php echo $product_array[$i][1] ?></td>
                         <td class="user_column"><img class="img_admin" src=<?php echo $product_array[$i][2] ?>></td>
+
+                        <td><button onclick="button_press_scroll('include/alter_price.inc.php?prodID=<?php echo $product_array[$i][0]; ?>&minus')" class="btn_product_settings_down">-</button></td>
                         <td class="user_column"><?php echo $product_array[$i][3] ?></td>
+                        <td> <button onclick="button_press_scroll('include/alter_price.inc.php?prodID=<?php echo $product_array[$i][0]; ?>&plus')" class="btn_product_settings_down">+</button></td>
 
                         <td><button onclick="button_press_scroll('include/alter_quantity.inc.php?prodID=<?php echo $product_array[$i][0]; ?>&minus')" class="btn_product_settings_down">-</button></td>
                         
